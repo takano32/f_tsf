@@ -1,49 +1,61 @@
 /* =========================================================================
-   TSFのF — PROOF SHEET / 校正刷り
-   Neo-brutalist editorial proofing-sheet. Warm sumi ink on bone paper,
-   a single cinnabar accent, hard 0-blur offsets, zero radius, exposed grid.
+   TSFのF — BOUDOIR NOIR / 深夜のサロン (Midnight Salon)
+   An after-hours adult salon: dark wine-velvet, champagne-gold hairlines,
+   candle-bloom behind every cover, a single painted-mouth red on the buy CTA.
+   Sensual through LIGHT, not graphics. A re-skin of the PROOF SHEET structure.
    ========================================================================= */
 
 :root {
-  /* paper / ink */
-  --ink: #14110d;
-  --bone: #ece4d2;
-  --bone-raised: #f5efe0;
-  --bone-sunken: #e2d9c4;
-  /* accent */
-  --cinnabar: #ff3417;
-  --cinnabar-deep: #c7240c;
+  /* canvas / surfaces */
+  --ink: #16090e;          /* page canvas + deepest velvet */
+  --bone: #ece0cf;         /* champagne-ivory = primary text/marks */
+  --bone-raised: #20121a;  /* raised velvet card/panel surface */
+  --bone-sunken: #0e0509;  /* sunken wells / lightbox stage / image matte */
+  /* accent — the painted mouth (the only loud thing) */
+  --cinnabar: #c8324a;
+  --cinnabar-deep: #93132a;
   /* text */
-  --muted: #5a5346;
-  --muted-invert: #b8ae97;
-  /* brand inks (quarantined to tabs) */
-  --fanza: #e50012;
-  --dlsite: #0e96d4;
-  /* aberration channels */
-  --aberr-warm: #ff3417;
-  --aberr-cool: #0e96d4;
-  /* lines / overlays */
-  --grid-line: rgba(20, 17, 13, 0.06);
-  --grid-line-invert: rgba(236, 228, 210, 0.08);
-  --scrim: rgba(20, 17, 13, 0.92);
-  /* offsets (hard, no blur) */
-  --offset: 8px 8px 0 var(--ink);
-  --offset-cinnabar: 8px 8px 0 var(--cinnabar);
+  --muted: #b59a93;        /* warm rose-taupe, ~5:1 AA on canvas */
+  --muted-invert: #6e5860;
+  /* brand inks (quarantined to edge seams) */
+  --fanza: #e63950;
+  --dlsite: #2ba7db;
+  /* new sensual tokens */
+  --gold: #d9b779;
+  --gold-soft: rgba(217, 183, 121, 0.2);
+  --rose: #e3a39b;
+  --rose-glow: rgba(227, 150, 150, 0.4);
+  --hada: #e8b79c;         /* flesh/peach flush warmth */
+  --candle: rgba(232, 176, 120, 0.55);
+  --wine: #2a0f18;         /* deep-wine accent band (back rooms) */
+  --glow-rose: 0 0 60px -6px var(--rose-glow);
+  --spec-soft: rgba(255, 255, 255, 0.1);
+  --velvet-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 40%);
+  /* retired aberration channels → repointed to glow so stray refs stay safe */
+  --aberr-warm: var(--rose-glow);
+  --aberr-cool: var(--gold-soft);
+  /* lines / overlays — warm gold seams */
+  --grid-line: rgba(217, 183, 121, 0.045);
+  --grid-line-invert: rgba(217, 183, 121, 0.06);
+  --scrim: rgba(8, 4, 7, 0.94);
+  /* shadows — soft low-key drop + gold hairline ring */
+  --offset: 0 22px 48px -22px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--gold-soft);
+  --offset-cinnabar: 0 0 46px -8px rgba(200, 90, 80, 0.45), 0 22px 48px -22px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--gold-soft);
   /* metrics */
   --max: 1240px;
   --gutter: clamp(20px, 5vw, 56px);
-  --bw-hair: 1.5px;
-  --bw: 3px;
-  --bw-heavy: 5px;
-  /* fonts */
+  --bw-hair: 1px;
+  --bw: 1.5px;
+  --bw-heavy: 2.5px;
+  --radius: 4px;
+  --radius-lg: 6px;
+  /* fonts — EN display swapped to sultry Fraunces; mono KEEPS Murecho JA fallback */
   --font-display-ja: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --font-display-en: "Bricolage Grotesque", "Hiragino Mincho ProN", Georgia, serif;
+  --font-display-en: "Fraunces", "Hiragino Mincho ProN", Georgia, serif;
   --font-body: "Murecho", "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
-  /* Martian Mono is Latin-only; Murecho catches JA glyphs per-character so labels
-     never tofu while Latin/numerals keep the mechanical mono voice. */
   --font-mono: "Martian Mono", "Murecho", ui-monospace, "Hiragino Kaku Gothic ProN", "Yu Gothic", monospace;
-  /* registration crosshair mark (cinnabar) */
-  --reg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18'%3E%3Cg stroke='%23FF3417' stroke-width='1.5' fill='none'%3E%3Cline x1='9' y1='0' x2='9' y2='18'/%3E%3Cline x1='0' y1='9' x2='18' y2='9'/%3E%3Ccircle cx='9' cy='9' r='4.5'/%3E%3C/g%3E%3C/svg%3E");
+  /* 朱印 hanko seal rendered in gold foil (red stays rare) */
+  --reg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Crect x='1.5' y='1.5' width='19' height='19' rx='2' fill='none' stroke='%23D9B779' stroke-width='1.6'/%3E%3Cpath d='M6 6h10M11 6v10M6 16h10' stroke='%23D9B779' stroke-width='1.3' fill='none'/%3E%3C/svg%3E");
 }
 
 * {
@@ -57,10 +69,16 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  color: var(--ink);
-  background-color: var(--bone);
-  background-image: repeating-linear-gradient(to right, var(--grid-line) 0 var(--bw-hair), transparent var(--bw-hair) 32px),
-    repeating-linear-gradient(to bottom, var(--grid-line) 0 var(--bw-hair), transparent var(--bw-hair) 32px);
+  color: var(--bone);
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, rgba(120, 40, 55, 0.3), transparent 60%),
+    radial-gradient(40vw 40vw at 12% 4%, rgba(227, 150, 150, 0.1), transparent 60%),
+    radial-gradient(34vw 34vw at 92% 26%, rgba(232, 176, 120, 0.08), transparent 62%),
+    radial-gradient(80% 60% at 50% 120%, rgba(0, 0, 0, 0.6), transparent),
+    repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px 32px);
+  background-attachment: fixed;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -85,24 +103,26 @@ img {
   height: auto;
 }
 
-/* fixed proof-sheet outer frame */
+/* thin champagne salon frame + intimate vignette (eyes fall to the lit center) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  border: var(--bw-heavy) solid var(--ink);
+  border: 1px solid var(--gold-soft);
+  box-shadow: inset 0 0 200px 40px rgba(0, 0, 0, 0.7);
   pointer-events: none;
   z-index: 90;
 }
 
-/* paper grain overlay */
+/* film grain in low light */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 89;
-  opacity: 0.04;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -111,8 +131,9 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 80;
-  background: var(--bone-raised);
-  border-bottom: var(--bw) solid var(--ink);
+  background: rgba(22, 9, 14, 0.72);
+  backdrop-filter: blur(14px) saturate(120%);
+  border-bottom: 1px solid var(--gold-soft);
 }
 .nav {
   max-width: var(--max);
@@ -129,17 +150,21 @@ body::after {
   gap: 11px;
   font-family: var(--font-display-ja);
   font-weight: 600;
-  font-size: 1.04rem;
-  letter-spacing: 0.04em;
+  font-size: 1.06rem;
+  letter-spacing: 0.05em;
+  color: var(--bone);
 }
 .brand-mark {
   width: 34px;
   height: 34px;
   display: grid;
   place-items: center;
-  background: var(--ink);
-  border: var(--bw) solid var(--ink);
+  background: var(--wine);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 0 18px -4px var(--rose-glow);
+  animation: breathe 7s ease-in-out infinite;
 }
 .brand-mark img {
   width: 100%;
@@ -159,7 +184,7 @@ body::after {
 .nav-links a {
   position: relative;
   padding: 4px 2px;
-  transition: color 0.12s linear;
+  transition: color 0.3s ease;
 }
 .nav-links a::after {
   content: "";
@@ -167,12 +192,13 @@ body::after {
   left: 0;
   right: 100%;
   bottom: -2px;
-  height: var(--bw);
-  background: var(--cinnabar);
-  transition: right 0.14s linear;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--gold), var(--rose));
+  box-shadow: 0 0 8px var(--gold-soft);
+  transition: right 0.3s ease;
 }
 .nav-links a:hover {
-  color: var(--ink);
+  color: var(--bone);
 }
 .nav-links a:hover::after {
   right: 0;
@@ -194,13 +220,16 @@ section > *,
   margin-inline: auto;
 }
 
-/* ink bands (hero, upcoming, news, footer) carry inverted grid + bone text */
+/* deep-wine "back rooms" — the darkest, most intimate bands */
 .band-ink,
 #announce,
 #accounts {
-  background-color: var(--ink);
-  background-image: repeating-linear-gradient(to right, var(--grid-line-invert) 0 var(--bw-hair), transparent var(--bw-hair) 32px),
-    repeating-linear-gradient(to bottom, var(--grid-line-invert) 0 var(--bw-hair), transparent var(--bw-hair) 32px);
+  background-color: var(--wine);
+  background-image:
+    radial-gradient(60% 50% at 50% 30%, rgba(180, 70, 80, 0.18), transparent 70%),
+    repeating-linear-gradient(to right, var(--grid-line-invert) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(to bottom, var(--grid-line-invert) 0 1px, transparent 1px 32px);
+  border-top: 1px solid var(--gold-soft);
   color: var(--bone);
 }
 
@@ -209,7 +238,7 @@ section > *,
   position: relative;
   margin-bottom: 26px;
   padding-top: 26px;
-  border-top: var(--bw) solid currentColor;
+  border-top: 1px solid var(--gold-soft);
 }
 .section-heading::before {
   position: absolute;
@@ -218,7 +247,7 @@ section > *,
   font-family: var(--font-mono);
   font-size: 0.64rem;
   letter-spacing: 0.22em;
-  color: var(--cinnabar);
+  color: var(--gold);
 }
 #latest .section-heading::before {
   content: "01 / LATEST WORK";
@@ -234,23 +263,25 @@ section > *,
   font-family: var(--font-display-ja);
   font-weight: 900;
   font-size: clamp(1.9rem, 5.5vw, 3.4rem);
-  line-height: 1.04;
+  line-height: 1.08;
   letter-spacing: 0.01em;
+  color: var(--bone);
 }
 html[lang="en"] .section-heading h2 {
   font-family: var(--font-display-en);
-  font-weight: 800;
+  font-weight: 560;
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
 }
 .section-note {
   margin: 0 0 22px;
   padding-top: 26px;
-  border-top: var(--bw) solid currentColor;
+  border-top: 1px solid var(--gold-soft);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: inherit;
-  opacity: 0.92;
+  color: var(--muted);
 }
 #shops .section-note::before,
 #accounts .section-note::before {
@@ -258,7 +289,7 @@ html[lang="en"] .section-heading h2 {
   margin-bottom: 6px;
   font-size: 0.64rem;
   letter-spacing: 0.22em;
-  color: var(--cinnabar);
+  color: var(--gold);
 }
 #shops .section-note::before {
   content: "04 / STORES";
@@ -279,14 +310,14 @@ html[lang="en"] .section-heading h2 {
   right: 0;
   display: flex;
   white-space: nowrap;
-  border-bottom: var(--bw-hair) solid var(--grid-line-invert);
+  border-bottom: 1px solid var(--grid-line-invert);
   font-family: var(--font-mono);
   font-size: 0.66rem;
-  letter-spacing: 0.28em;
-  color: var(--cinnabar);
+  letter-spacing: 0.32em;
+  color: var(--gold);
   padding-block: 7px;
   will-change: transform;
-  animation: ticker 26s linear infinite;
+  animation: ticker 44s linear infinite;
 }
 .hero-ticker span {
   padding-right: 1ch;
@@ -305,11 +336,12 @@ html[lang="en"] .section-heading h2 {
   top: 50%;
   transform: translateY(-44%);
   font-family: var(--font-display-en);
-  font-weight: 800;
+  font-weight: 600;
+  font-style: italic;
   font-size: clamp(16rem, 42vw, 38rem);
   line-height: 0.7;
   color: transparent;
-  -webkit-text-stroke: 2px rgba(236, 228, 210, 0.16);
+  -webkit-text-stroke: 1.5px var(--gold-soft);
   pointer-events: none;
   user-select: none;
 }
@@ -321,9 +353,9 @@ html[lang="en"] .section-heading h2 {
   margin: 0 0 18px;
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--cinnabar);
+  color: var(--gold);
 }
 .hero-title {
   margin: 0;
@@ -335,6 +367,8 @@ html[lang="en"] .section-heading h2 {
   font-size: clamp(3.4rem, 13vw, 9.5rem);
   line-height: 0.9;
   letter-spacing: 0.01em;
+  color: var(--bone);
+  text-shadow: 0 0 50px var(--rose-glow), 0 0 90px rgba(180, 70, 80, 0.25);
 }
 .hero-title-mark {
   font-family: var(--font-mono);
@@ -343,13 +377,14 @@ html[lang="en"] .section-heading h2 {
   color: var(--cinnabar);
   align-self: flex-start;
   margin-top: 0.4em;
+  text-shadow: 0 0 14px var(--rose-glow);
 }
 .hero .page-lead {
   display: inline-block;
   max-width: 640px;
   margin: 28px 0 0;
   padding-top: 22px;
-  border-top: var(--bw) solid var(--cinnabar);
+  border-top: 1px solid var(--gold-soft);
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 2vw, 1.12rem);
   color: var(--bone);
@@ -372,57 +407,76 @@ html[lang="en"] .section-heading h2 {
   gap: clamp(20px, 3vw, 40px);
   align-items: stretch;
   padding: clamp(24px, 3vw, 40px);
-  background: var(--bone-raised);
-  border: var(--bw) solid var(--ink);
-  box-shadow: var(--offset);
-  color: var(--ink);
+  background: linear-gradient(160deg, #24141c, #190c12);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--offset), inset 0 1px 0 var(--spec-soft);
+  color: var(--bone);
 }
-/* the lit/coveted Latest card gets the cinnabar offset-plate */
+/* the coveted Latest card glows rose and breathes */
 #latest .featured-work-card {
-  box-shadow: var(--offset-cinnabar);
+  box-shadow: var(--offset-cinnabar), inset 0 1px 0 var(--spec-soft);
 }
-/* corner registration marks */
+#latest .featured-work-card::before {
+  animation: breathe 7s ease-in-out infinite;
+}
+/* corner 朱印 gold seals */
 .featured-work-card::before,
 .featured-work-card::after {
   content: "";
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   background: var(--reg) center / contain no-repeat;
-  opacity: 0.55;
-  transition: opacity 0.12s linear;
+  opacity: 0.35;
+  transition: opacity 0.4s ease;
 }
 .featured-work-card::before {
-  top: -9px;
-  left: -9px;
+  top: -11px;
+  left: -11px;
 }
 .featured-work-card::after {
-  bottom: -9px;
-  right: -9px;
+  bottom: -11px;
+  right: -11px;
 }
 .featured-work-card:hover::before,
 .featured-work-card:hover::after {
-  opacity: 1;
+  opacity: 0.8;
 }
 
-/* cover — breaks the top frame line, floats above the grid */
+/* cover — candle-bloom behind + dim-then-reveal "undressing" on hover */
 .fanza-work-image {
+  position: relative;
   display: block;
   align-self: start;
   width: 100%;
   margin-top: clamp(-30px, -2.4vw, -18px);
   margin-left: clamp(-14px, -1.4vw, -8px);
   padding: 0;
-  border: var(--bw) solid var(--ink);
-  background: var(--bone);
-  box-shadow: var(--offset-cinnabar);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
+  background: transparent;
+  box-shadow: 0 18px 40px -16px #000;
   cursor: pointer;
-  transition: transform 0.13s linear, box-shadow 0.13s linear;
+  filter: brightness(0.86) saturate(0.92);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+.fanza-work-image::after {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  z-index: -1;
+  background: radial-gradient(closest-side, var(--candle), var(--rose-glow) 45%, transparent 75%);
+  filter: blur(18px);
+  opacity: 0.5;
+  animation: breathe 7s ease-in-out infinite;
 }
 .fanza-work-image picture {
   display: block;
   aspect-ratio: 3 / 4;
   background: var(--bone-sunken);
+  border-radius: calc(var(--radius) - 1px);
+  overflow: hidden;
 }
 .fanza-work-image img {
   width: 100%;
@@ -430,8 +484,9 @@ html[lang="en"] .section-heading h2 {
   object-fit: contain;
 }
 .fanza-work-image:hover {
-  transform: translateY(-6px) rotate(-1.5deg);
-  box-shadow: -3px 0 0 var(--aberr-cool), 3px 0 0 var(--aberr-warm), 11px 11px 0 var(--cinnabar);
+  transform: translateY(-6px) scale(1.015);
+  filter: brightness(1.04) saturate(1.06);
+  box-shadow: 0 28px 60px -18px #000, var(--glow-rose);
 }
 
 .card-body {
@@ -447,22 +502,26 @@ html[lang="en"] .section-heading h2 {
   font-size: clamp(1.35rem, 3vw, 2.1rem);
   line-height: 1.5;
   letter-spacing: 0.01em;
+  color: var(--bone);
 }
 html[lang="en"] .card-body h3 {
   font-family: var(--font-display-en);
-  font-weight: 800;
-  line-height: 1.08;
+  font-weight: 540;
+  font-style: italic;
+  line-height: 1.12;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
 }
 .release-date {
   align-self: flex-start;
   margin: 0;
   padding: 6px 12px;
-  border: var(--bw) solid var(--ink);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
   background: var(--bone-sunken);
   font-family: var(--font-mono);
   font-size: 0.74rem;
   letter-spacing: 0.06em;
-  color: var(--ink);
+  color: var(--gold);
 }
 .work-summary {
   margin: 2px 0 0;
@@ -470,7 +529,7 @@ html[lang="en"] .card-body h3 {
   font-size: 0.93rem;
 }
 
-/* action row — chunky stacked plates */
+/* action row — velvet pills with satin sheen */
 .link-row {
   display: grid;
   gap: 10px;
@@ -484,24 +543,42 @@ html[lang="en"] .card-body h3 {
   justify-content: center;
   min-height: 50px;
   padding: 12px 18px 12px 26px;
-  border: var(--bw) solid var(--ink);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 5px 5px 0 var(--ink);
-  transition: transform 0.11s linear, box-shadow 0.11s linear, background 0.11s linear, color 0.11s linear;
+  overflow: hidden;
+  box-shadow: 0 10px 24px -14px #000, inset 0 1px 0 var(--spec-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+/* sheen band (one-shot on hover) */
+.shop-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-150%);
+  background: linear-gradient(110deg, transparent, rgba(255, 235, 210, 0.25), transparent);
+  pointer-events: none;
+}
+.shop-link:hover::after {
+  animation: sheen 0.7s ease;
 }
 .shop-link:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 2px 2px 0 var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -14px #000, 0 0 24px -6px var(--rose-glow);
 }
-/* brand tabs quarantined to a left edge bar */
+.shop-link:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px -10px #000;
+}
+/* brand glowing edge seams quarantined to the left */
 .shop-link.fanza,
 .shop-link.dlsite {
-  background: var(--ink);
+  background: var(--bone-raised);
   color: var(--bone);
 }
 .shop-link.fanza::before,
@@ -511,38 +588,44 @@ html[lang="en"] .card-body h3 {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 9px;
-  transition: width 0.12s linear;
+  width: 3px;
+  opacity: 0.95;
+  transition: width 0.3s ease, opacity 0.3s ease;
 }
 .shop-link.fanza::before {
   background: var(--fanza);
+  box-shadow: 0 0 10px var(--fanza);
 }
 .shop-link.dlsite::before {
   background: var(--dlsite);
+  box-shadow: 0 0 10px var(--dlsite);
 }
 .shop-link.fanza:hover::before,
 .shop-link.dlsite:hover::before {
   width: 100%;
+  opacity: 0.28;
+  box-shadow: none;
 }
-.shop-link.fanza > *,
-.shop-link.dlsite > * {
-  position: relative;
-}
-/* Sample = primary cinnabar CTA */
+/* Sample = primary lipstick CTA with a perpetual wet sheen */
 .shop-link.sample {
-  padding-left: 18px;
-  background: var(--cinnabar);
-  color: var(--ink);
-  box-shadow: 5px 5px 0 var(--ink);
+  padding-left: 26px;
+  background: linear-gradient(180deg, #c8324a, #a11e33);
+  color: var(--bone);
+  box-shadow: 0 10px 24px -14px #000, 0 0 30px -8px var(--rose-glow), inset 0 1px 0 var(--spec-soft);
 }
-.shop-link.sample::after {
+.shop-link.sample::before {
   content: "▸";
-  margin-left: 0.6em;
+  position: absolute;
+  right: 18px;
   font-size: 1.1em;
 }
+.shop-link.sample::after {
+  transform: translateX(-150%);
+  animation: sheen 3.6s ease-in-out infinite;
+}
 .shop-link.sample:hover {
-  background: var(--ink);
-  color: var(--bone);
+  background: linear-gradient(180deg, #d83a54, #93132a);
+  box-shadow: 0 16px 34px -14px #000, 0 0 38px -6px var(--rose-glow);
 }
 
 /* ======================= STORE CARDS ======================= */
@@ -552,9 +635,10 @@ html[lang="en"] .card-body h3 {
 .shop-card {
   position: relative;
   background: var(--bone-raised);
-  border: var(--bw) solid var(--ink);
-  box-shadow: var(--offset);
-  transition: transform 0.12s linear, box-shadow 0.12s linear;
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--offset), inset 0 1px 0 var(--spec-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 .shop-card::before {
@@ -564,13 +648,13 @@ html[lang="en"] .card-body h3 {
   right: 0;
   bottom: 0;
   height: 0;
-  background: var(--cinnabar);
-  transition: height 0.16s linear;
+  background: linear-gradient(0deg, rgba(200, 80, 90, 0.35), rgba(217, 183, 121, 0.1));
+  transition: height 0.4s ease;
   z-index: 0;
 }
 .shop-card:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 4px 4px 0 var(--ink);
+  transform: translateY(-3px);
+  box-shadow: var(--offset-cinnabar);
 }
 .shop-card:hover::before {
   height: 100%;
@@ -588,6 +672,7 @@ html[lang="en"] .card-body h3 {
   width: 38px;
   height: 38px;
   object-fit: contain;
+  filter: drop-shadow(0 0 6px var(--gold-soft));
 }
 .shop-card .label {
   font-family: var(--font-mono);
@@ -595,9 +680,11 @@ html[lang="en"] .card-body h3 {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: var(--bone);
+  transition: color 0.3s ease;
 }
 .shop-card:hover .label {
-  color: var(--bone);
+  color: var(--gold);
 }
 
 /* ======================= SOCIAL CARDS ======================= */
@@ -614,11 +701,12 @@ html[lang="en"] .card-body h3 {
   min-height: 120px;
   padding: 20px 14px;
   background: var(--bone-raised);
-  border: var(--bw) solid var(--ink);
-  box-shadow: var(--offset);
-  color: var(--ink);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--offset), inset 0 1px 0 var(--spec-soft);
+  color: var(--bone);
   text-align: center;
-  transition: transform 0.12s linear, box-shadow 0.12s linear;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .social-card:hover {
   transform: translateY(-4px);
@@ -628,12 +716,14 @@ html[lang="en"] .card-body h3 {
   width: 30px;
   height: 30px;
   object-fit: contain;
+  filter: drop-shadow(0 0 6px var(--gold-soft));
 }
 .social-card strong {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--bone);
 }
 
 /* ======================= FOOTER ======================= */
@@ -641,7 +731,7 @@ html[lang="en"] .card-body h3 {
   position: relative;
   padding: 40px var(--gutter) 56px;
   background: var(--ink);
-  color: var(--muted-invert);
+  color: var(--muted);
   text-align: center;
   display: grid;
   gap: 8px;
@@ -649,21 +739,16 @@ html[lang="en"] .card-body h3 {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
 }
-/* printer's colour-bar calibration strip */
+/* satin ribbon (was the CMYK calibration strip) */
 .footer::before {
   content: "";
   display: block;
   width: min(280px, 70%);
-  height: 12px;
+  height: 6px;
   margin: 0 auto 18px;
-  background: linear-gradient(
-    to right,
-    var(--cinnabar) 0 25%,
-    var(--dlsite) 25% 50%,
-    var(--bone) 50% 75%,
-    var(--muted-invert) 75% 100%
-  );
-  border: var(--bw-hair) solid var(--bone);
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--gold) 0 25%, var(--rose) 25% 55%, var(--cinnabar) 55% 80%, var(--wine) 80% 100%);
+  box-shadow: 0 0 16px -4px var(--rose-glow);
 }
 .affiliate-note {
   opacity: 0.7;
@@ -672,20 +757,22 @@ html[lang="en"] .card-body h3 {
 
 /* ======================= DATE-RESHUFFLE FOCUS ======================= */
 .section-focus .featured-work-card {
-  box-shadow: var(--offset-cinnabar);
-  animation: regblink 0.9s steps(1) 3;
+  animation: regblink 1.4s ease-in-out 3;
 }
 .section-focus .featured-work-card::before,
 .section-focus .featured-work-card::after {
-  opacity: 1;
+  opacity: 0.8;
 }
 @keyframes regblink {
+  0%, 100% {
+    box-shadow: var(--offset), inset 0 1px 0 var(--spec-soft);
+  }
   50% {
-    box-shadow: 8px 8px 0 var(--ink);
+    box-shadow: var(--offset-cinnabar), inset 0 1px 0 var(--spec-soft);
   }
 }
 
-/* ======================= SAMPLE LIGHTBOX ======================= */
+/* ======================= SAMPLE LIGHTBOX (private viewing room) ======================= */
 .sample-overlay {
   position: fixed;
   inset: 0;
@@ -699,8 +786,8 @@ html[lang="en"] .card-body h3 {
   position: absolute;
   inset: 0;
   background-color: var(--scrim);
-  background-image: repeating-linear-gradient(to right, var(--grid-line-invert) 0 var(--bw-hair), transparent var(--bw-hair) 32px),
-    repeating-linear-gradient(to bottom, var(--grid-line-invert) 0 var(--bw-hair), transparent var(--bw-hair) 32px);
+  background-image: radial-gradient(60% 60% at 50% 45%, transparent, rgba(0, 0, 0, 0.65));
+  backdrop-filter: blur(6px);
 }
 .sample-dialog {
   position: relative;
@@ -709,9 +796,10 @@ html[lang="en"] .card-body h3 {
   height: min(94vh, 900px);
   margin: 3vh auto;
   padding: 16px;
-  background: var(--bone-raised);
-  border: var(--bw-heavy) solid var(--ink);
-  box-shadow: 12px 12px 0 var(--cinnabar);
+  background: linear-gradient(160deg, #24141c, #190c12);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 40px 120px -30px #000, 0 0 60px -20px var(--rose-glow);
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   gap: 12px;
@@ -720,7 +808,7 @@ html[lang="en"] .card-body h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: var(--bw) solid var(--ink);
+  border-bottom: 1px solid var(--gold-soft);
   padding-bottom: 10px;
 }
 .sample-header h2 {
@@ -728,19 +816,24 @@ html[lang="en"] .card-body h3 {
   font-family: var(--font-display-ja);
   font-weight: 600;
   font-size: clamp(1rem, 2.4vw, 1.4rem);
+  color: var(--bone);
 }
 .sample-close {
   width: 42px;
   height: 42px;
-  border: var(--bw) solid var(--ink);
-  background: var(--bone);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
+  background: var(--bone-raised);
+  color: var(--bone);
   font-size: 1.3rem;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.11s linear, color 0.11s linear;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 .sample-close:hover {
   background: var(--cinnabar);
+  color: var(--bone);
+  box-shadow: 0 0 24px -6px var(--rose-glow);
 }
 .sample-stage {
   position: relative;
@@ -749,7 +842,8 @@ html[lang="en"] .card-body h3 {
   place-items: center;
   overflow: hidden;
   background: var(--bone-sunken);
-  border: var(--bw) solid var(--ink);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
 }
 .sample-page-current {
   width: 100%;
@@ -765,7 +859,8 @@ html[lang="en"] .card-body h3 {
   max-width: 100%;
   max-height: calc(94vh - 180px);
   object-fit: contain;
-  border: var(--bw-hair) solid var(--ink);
+  border: 1px solid var(--gold-soft);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.8);
 }
 .sample-page-current.is-loading img,
 .sample-page-current.is-empty img {
@@ -775,7 +870,7 @@ html[lang="en"] .card-body h3 {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   letter-spacing: 0.14em;
-  color: var(--ink);
+  color: var(--gold);
 }
 .sample-nav-zone {
   position: absolute;
@@ -800,24 +895,27 @@ html[lang="en"] .card-body h3 {
   align-items: center;
 }
 .sample-control {
+  position: relative;
   min-height: 44px;
   padding: 10px 20px;
-  border: var(--bw) solid var(--ink);
-  background: var(--ink);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
+  background: var(--bone-raised);
   color: var(--bone);
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 4px 4px 0 var(--cinnabar);
-  transition: transform 0.1s linear, box-shadow 0.1s linear, background 0.1s linear, color 0.1s linear;
+  overflow: hidden;
+  box-shadow: var(--offset);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 .sample-control:hover {
   background: var(--cinnabar);
-  color: var(--ink);
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--bone);
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px -6px var(--rose-glow);
 }
 .sample-help {
   margin: 0;
@@ -828,7 +926,7 @@ html[lang="en"] .card-body h3 {
   color: var(--muted);
 }
 
-/* ======================= AGE GATE ======================= */
+/* ======================= AGE GATE (velvet rope) ======================= */
 .age-gate {
   position: fixed;
   inset: 0;
@@ -837,8 +935,8 @@ html[lang="en"] .card-body h3 {
   place-items: center;
   padding: 20px;
   background-color: var(--scrim);
-  background-image: repeating-linear-gradient(to right, var(--grid-line-invert) 0 var(--bw-hair), transparent var(--bw-hair) 32px),
-    repeating-linear-gradient(to bottom, var(--grid-line-invert) 0 var(--bw-hair), transparent var(--bw-hair) 32px);
+  background-image: radial-gradient(60% 60% at 50% 45%, transparent, rgba(0, 0, 0, 0.7));
+  backdrop-filter: blur(8px);
 }
 .age-gate.is-open {
   display: grid;
@@ -847,30 +945,35 @@ html[lang="en"] .card-body h3 {
   position: relative;
   width: min(94vw, 480px);
   padding: 30px 28px;
-  background: var(--bone-raised);
-  border: var(--bw-heavy) solid var(--ink);
-  box-shadow: 12px 12px 0 var(--cinnabar);
+  background: linear-gradient(160deg, #24141c, #190c12);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 40px 120px -30px #000, 0 0 60px -18px var(--rose-glow);
   text-align: center;
 }
-/* colophon-style 18+ bar */
+/* discreet members' door 18+ bar */
 .age-gate-panel::before {
   content: "R-18 / 18+ ONLY";
   display: block;
   margin: -30px -28px 22px;
-  padding: 8px;
-  background: var(--cinnabar);
-  color: var(--ink);
+  padding: 9px;
+  background: linear-gradient(90deg, #c8324a, #93132a);
+  color: var(--gold);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.3em;
+  box-shadow: 0 0 18px -6px var(--rose-glow);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 .age-gate-icon {
   width: 60px;
   height: 60px;
   margin: 0 auto 14px;
-  border: var(--bw) solid var(--ink);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 0 20px -6px var(--rose-glow);
 }
 .age-gate-icon img {
   width: 100%;
@@ -882,6 +985,7 @@ html[lang="en"] .card-body h3 {
   font-family: var(--font-display-ja);
   font-weight: 900;
   font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--bone);
 }
 .age-gate-panel p {
   margin: 0;
@@ -895,27 +999,34 @@ html[lang="en"] .card-body h3 {
 }
 .age-gate-button {
   min-height: 50px;
-  border: var(--bw) solid var(--ink);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 5px 5px 0 var(--ink);
-  transition: transform 0.11s linear, box-shadow 0.11s linear, background 0.11s linear, color 0.11s linear;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 .age-gate-button:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 2px 2px 0 var(--ink);
+  transform: translateY(-2px);
 }
 .age-yes {
-  background: var(--cinnabar);
-  color: var(--ink);
+  background: linear-gradient(180deg, #c8324a, #a11e33);
+  color: var(--bone);
+  box-shadow: 0 10px 24px -14px #000, 0 0 30px -8px var(--rose-glow);
+}
+.age-yes:hover {
+  box-shadow: 0 14px 30px -12px #000, 0 0 40px -6px var(--rose-glow);
 }
 .age-no {
-  background: var(--bone);
-  color: var(--ink);
+  background: transparent;
+  color: var(--muted);
+}
+.age-no:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--bone);
 }
 
 body.sample-open,
@@ -923,11 +1034,29 @@ body.age-gate-open {
   overflow: hidden;
 }
 
-/* ======================= PAGE-LOAD MOTION ======================= */
+/* ======================= MOTION ======================= */
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.04);
+  }
+}
+@keyframes sheen {
+  from {
+    transform: translateX(-150%);
+  }
+  to {
+    transform: translateX(150%);
+  }
+}
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -935,13 +1064,13 @@ body.age-gate-open {
   }
 }
 .hero-kicker {
-  animation: rise 0.5s both 0.05s;
+  animation: rise 0.6s both 0.05s;
 }
 .hero-title {
-  animation: rise 0.6s both 0.12s;
+  animation: rise 0.7s both 0.12s;
 }
 .hero .page-lead {
-  animation: rise 0.6s both 0.22s;
+  animation: rise 0.7s both 0.24s;
 }
 
 /* ======================= RESPONSIVE ======================= */
@@ -1000,12 +1129,25 @@ body.age-gate-open {
   .hero-kicker,
   .hero-title,
   .hero .page-lead,
+  .brand-mark,
+  .fanza-work-image::after,
+  #latest .featured-work-card::before,
+  .shop-link.sample::after,
   .section-focus .featured-work-card {
     animation: none;
   }
+  /* freeze covers in the lit state */
+  .fanza-work-image {
+    filter: brightness(1) saturate(1);
+  }
   .fanza-work-image:hover {
     transform: none;
-    box-shadow: var(--offset-cinnabar);
+    box-shadow: 0 28px 60px -18px #000, var(--glow-rose);
+  }
+  .shop-link:hover::after {
+    animation: none;
+    transform: none;
+    opacity: 0;
   }
   *,
   *::before,
