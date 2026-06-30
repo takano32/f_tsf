@@ -1,48 +1,56 @@
 /* =========================================================================
-   TSFのF — LACQUERED PLUM BOUDOIR / 漆黒のローズ・サロン
-   Pink-keynote adult salon: the whole room is a deep blackcurrant-plum,
-   washed with blush-magenta light, seamed in rose-gold, with a single wet
-   stroke of jewel-magenta on the lips (Sample CTA + R-18 bar only).
-   Sensual through LIGHT, not graphics. A palette re-tune of BOUDOIR NOIR.
+   TSFのF — HOT-PINK PULP / 成人誌の表紙「即ヌキ特価号」
+   Blazing full-bleed fuchsia adult-mag cover: black photo panels, fat poster
+   type, yellow starburst stickers, neon glow, throbbing buy buttons.
+   Loud & overt (下品OK) — pink is the dominant FIELD. A re-tune of the
+   LACQUERED PLUM structure; all JS hooks preserved.
    ========================================================================= */
 
 :root {
-  /* canvas / surfaces — the dominant pink is the FIELD itself (rose-black plum) */
-  --ink: #1e0a19;          /* page canvas + deepest velvet — dark blackcurrant-plum */
-  --sky-top: #3e1330;      /* mauve-plum crown for the twilight wash */
-  --bone: #f1dbe0;         /* blush-pearl ivory text/marks (~13:1 AA on plum) */
-  --bone-raised: #2a1220;  /* raised lacquered mauve-plum card/panel surface */
-  --bone-sunken: #120510;  /* sunken wells / lightbox stage / image matte (plum-black) */
-  /* accent — the painted mouth, hot lacquered jewel-magenta (Sample CTA + R-18 only) */
-  --cinnabar: #e23c79;
-  --cinnabar-deep: #ae1a5e;
-  /* text */
-  --muted: #c6a0b2;        /* rose-mauve, ~7.8:1 AA on the plum field */
-  --muted-invert: #6e4a5e;
-  /* brand inks (quarantined to edge seams/dots — the cyan dot is a kept cool jewel) */
-  --fanza: #e63950;
-  --dlsite: #2ba7db;
-  /* metal — rose-gold, so even the hairlines tilt pink */
-  --gold: #dfaaa0;
-  --gold-soft: rgba(224, 168, 158, 0.24);
-  --rose: #e89fb0;
-  --rose-glow: rgba(234, 110, 165, 0.45);
-  --hada: #ecb2a8;         /* flesh/skin flush — pinker peach so covers glow like skin */
-  --candle: rgba(244, 146, 168, 0.52);  /* blush-rose candlelight bloom behind covers */
-  --wine: #38112a;         /* rosewood-plum back-room band */
-  --glow-rose: 0 0 60px -6px var(--rose-glow);
-  --spec-soft: rgba(255, 238, 246, 0.1);
-  --velvet-sheen: linear-gradient(135deg, rgba(255, 240, 248, 0.05), rgba(255, 240, 248, 0) 40%);
-  /* retired aberration channels → repointed to glow so stray refs stay safe */
+  /* the field IS the dominant pink (blazing fuchsia page) */
+  --ink: #ec0976;          /* page canvas — blazing fuchsia */
+  --sky-top: #ff52aa;      /* hot crown glow for the twilight wash */
+  --field-ink: #14000a;    /* near-black text ON the pink field (~4.9:1 AA) */
+  --bone: #fff2f8;         /* light text ON dark panels (~18:1) */
+  --bone-raised: #17040e;  /* black-gloss card/panel surface */
+  --bone-sunken: #08000b;  /* blackest well / lightbox stage / cover matte */
+  /* accents — un-quarantined, loud */
+  --cinnabar: #ff2f74;     /* hot magenta-red */
+  --cinnabar-deep: #d2005a;
+  --neon-pink: #ff3ca8;
+  --muted: #ffc2db;        /* light pink muted text on dark panels (~12:1) */
+  --muted-invert: #7a0040;
+  /* brand inks (edge seams/dots) */
+  --fanza: #ff2d4f;
+  --dlsite: #19b6ff;
+  /* metal is now glowing YELLOW neon (lines/labels/seal) */
+  --gold: #ffe01a;
+  --gold-soft: rgba(255, 210, 30, 0.34);
+  --rose: #ff74b3;
+  --rose-glow: rgba(255, 45, 150, 0.65);
+  --hada: #ffb6ac;
+  --candle: rgba(255, 70, 170, 0.7);   /* blazing neon window-bloom behind covers */
+  --wine: #2a0016;          /* black shelf for back-room bands + footer */
+  /* sticker / burst */
+  --burst-yellow: #ffd400;
+  --burst-ink: #1a0010;
+  /* glows / shadows */
+  --glow-rose: 0 0 70px -4px var(--rose-glow);
+  --spec-soft: rgba(255, 245, 250, 0.12);
+  --velvet-sheen: linear-gradient(135deg, rgba(255, 240, 248, 0.06), rgba(255, 240, 248, 0) 40%);
+  --seam-glow: 0 0 8px -1px rgba(255, 210, 30, 0.55);
+  --spotlight: radial-gradient(120% 80% at 50% -12%, rgba(255, 255, 255, 0.1), transparent 55%);
+  --throb-glow: 0 0 70px -6px var(--rose-glow), 0 0 24px -4px rgba(255, 47, 116, 0.7);
+  /* retired aberration channels → repointed so stray refs stay safe */
   --aberr-warm: var(--rose-glow);
   --aberr-cool: var(--gold-soft);
-  /* lines / overlays — rose-gold seams */
-  --grid-line: rgba(224, 168, 158, 0.05);
-  --grid-line-invert: rgba(234, 130, 165, 0.07);
-  --scrim: rgba(14, 4, 11, 0.94);
-  /* shadows — soft low-key drop + rose-gold ring; plum-tinted (never dirty black) */
-  --offset: 0 22px 48px -22px rgba(18, 4, 13, 0.82), 0 0 0 1px var(--gold-soft);
-  --offset-cinnabar: 0 0 46px -8px rgba(226, 60, 120, 0.45), 0 22px 48px -22px rgba(18, 4, 13, 0.82), 0 0 0 1px var(--gold-soft);
+  /* lines / overlays — faint yellow */
+  --grid-line: rgba(255, 210, 30, 0.05);
+  --grid-line-invert: rgba(255, 210, 30, 0.08);
+  --scrim: rgba(8, 0, 11, 0.94);
+  /* offsets — black drop + yellow neon ring */
+  --offset: 0 22px 48px -22px rgba(0, 0, 0, 0.85), 0 0 0 1.5px var(--gold-soft);
+  --offset-cinnabar: 0 0 50px -6px var(--rose-glow), 0 22px 48px -22px rgba(0, 0, 0, 0.85), 0 0 0 1.5px var(--cinnabar);
   /* metrics */
   --max: 1240px;
   --gutter: clamp(20px, 5vw, 56px);
@@ -51,15 +59,13 @@
   --bw-heavy: 2.5px;
   --radius: 4px;
   --radius-lg: 6px;
-  /* fonts — EN display Fraunces (sultry italic); mono KEEPS Murecho JA fallback (no tofu) */
-  --font-display-ja: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --font-display-en: "Fraunces", "Hiragino Mincho ProN", Georgia, serif;
+  /* fonts — LOUD poster display (Reggae One JA / Anton EN); mono KEEPS Murecho fallback */
+  --font-display-ja: "Reggae One", "Hiragino Mincho ProN", "Yu Mincho", sans-serif;
+  --font-display-en: "Anton", Impact, "Arial Narrow", sans-serif;
   --font-body: "Murecho", "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
   --font-mono: "Martian Mono", "Murecho", ui-monospace, "Hiragino Kaku Gothic ProN", "Yu Gothic", monospace;
-  /* 朱印 hanko seal rendered in ROSE-GOLD foil (jewel-magenta stays rare) */
-  --reg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Crect x='1.5' y='1.5' width='19' height='19' rx='2' fill='none' stroke='%23DFAAA0' stroke-width='1.6'/%3E%3Cpath d='M6 6h10M11 6v10M6 16h10' stroke='%23DFAAA0' stroke-width='1.3' fill='none'/%3E%3C/svg%3E");
-  /* ACCENT-RATIO BUDGET: loud jewel-magenta (--cinnabar) is permitted on the Sample CTA
-     + R-18 bar ONLY (~5% of pixels). Do not smear it, or the design slides into slop. */
+  /* corner seal → yellow STARBURST sticker */
+  --reg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 2l6 13 14-6-6 14 14 6-14 6 6 14-14-6-6 13-6-13-14 6 6-14-14-6 14-6-6-14 14 6z' fill='%23ffd400' stroke='%231a0010' stroke-width='2.4'/%3E%3C/svg%3E");
 }
 
 * {
@@ -73,16 +79,16 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  color: var(--bone);
+  color: var(--field-ink);
   background-color: var(--ink);
   background-image:
-    radial-gradient(120% 85% at 50% -12%, rgba(150, 30, 92, 0.3), transparent 60%),
-    radial-gradient(40vw 40vw at 12% 4%, rgba(234, 118, 165, 0.13), transparent 60%),
-    radial-gradient(34vw 34vw at 92% 26%, rgba(238, 140, 168, 0.1), transparent 62%),
-    radial-gradient(82% 60% at 50% 122%, rgba(14, 4, 11, 0.66), transparent),
-    linear-gradient(180deg, var(--sky-top) 0%, var(--ink) 46%, var(--bone-sunken) 100%),
+    radial-gradient(120% 85% at 50% -12%, rgba(255, 70, 170, 0.55), transparent 60%),
+    radial-gradient(45vw 45vw at 12% 4%, rgba(255, 225, 26, 0.16), transparent 60%),
+    radial-gradient(40vw 40vw at 92% 26%, rgba(255, 60, 160, 0.3), transparent 62%),
     repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px 32px),
-    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px 32px);
+    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px 32px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='1.1' fill='%23000' fill-opacity='0.12'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--ink) 46%, #b1005a 100%);
   background-attachment: fixed;
   line-height: 1.6;
   overflow-x: hidden;
@@ -108,25 +114,25 @@ img {
   height: auto;
 }
 
-/* thin rose-gold salon frame + intimate plum vignette */
+/* yellow neon frame + black vignette */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  border: 1px solid var(--gold-soft);
-  box-shadow: inset 0 0 200px 40px rgba(18, 4, 13, 0.72);
+  border: 1.5px solid var(--gold-soft);
+  box-shadow: inset 0 0 200px 40px rgba(8, 0, 11, 0.72), inset 0 0 90px var(--rose-glow);
   pointer-events: none;
   z-index: 90;
 }
 
-/* film grain in low light */
+/* gritty print grain */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 89;
-  opacity: 0.05;
+  opacity: 0.07;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -136,9 +142,10 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 80;
-  background: rgba(30, 10, 25, 0.72);
+  background: rgba(8, 0, 11, 0.78);
   backdrop-filter: blur(14px) saturate(120%);
-  border-bottom: 1px solid var(--gold-soft);
+  border-bottom: 1.5px solid var(--cinnabar);
+  box-shadow: 0 0 20px -6px var(--rose-glow);
 }
 .nav {
   max-width: var(--max);
@@ -154,9 +161,9 @@ body::after {
   align-items: center;
   gap: 11px;
   font-family: var(--font-display-ja);
-  font-weight: 600;
-  font-size: 1.06rem;
-  letter-spacing: 0.05em;
+  font-weight: 400;
+  font-size: 1.12rem;
+  letter-spacing: 0.04em;
   color: var(--bone);
 }
 .brand-mark {
@@ -168,7 +175,7 @@ body::after {
   border: 1px solid var(--gold-soft);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 0 18px -4px var(--rose-glow);
+  box-shadow: 0 0 22px -2px var(--cinnabar);
   animation: breathe 7s ease-in-out infinite;
 }
 .brand-mark img {
@@ -198,7 +205,7 @@ body::after {
   right: 100%;
   bottom: -2px;
   height: 1.5px;
-  background: linear-gradient(90deg, var(--gold), var(--rose));
+  background: linear-gradient(90deg, var(--burst-yellow), var(--cinnabar));
   box-shadow: 0 0 8px var(--gold-soft);
   transition: right 0.3s ease;
 }
@@ -225,16 +232,16 @@ section > *,
   margin-inline: auto;
 }
 
-/* rosewood-plum "back rooms" — the deepest, most saturated pink bands */
-.band-ink,
+/* back-room bands = black shelves (hero stays on the pink field) */
 #announce,
 #accounts {
   background-color: var(--wine);
   background-image:
-    radial-gradient(60% 50% at 50% 30%, rgba(226, 60, 120, 0.2), transparent 70%),
+    radial-gradient(60% 50% at 50% 30%, rgba(255, 60, 150, 0.3), transparent 70%),
     repeating-linear-gradient(to right, var(--grid-line-invert) 0 1px, transparent 1px 32px),
     repeating-linear-gradient(to bottom, var(--grid-line-invert) 0 1px, transparent 1px 32px);
-  border-top: 1px solid var(--gold-soft);
+  border-top: 1.5px solid var(--gold-soft);
+  box-shadow: inset 0 1px 0 var(--rose-glow);
   color: var(--bone);
 }
 
@@ -243,7 +250,7 @@ section > *,
   position: relative;
   margin-bottom: 26px;
   padding-top: 26px;
-  border-top: 1px solid var(--gold-soft);
+  border-top: 1.5px solid var(--gold-soft);
 }
 .section-heading::before {
   position: absolute;
@@ -255,37 +262,45 @@ section > *,
   color: var(--gold);
 }
 #latest .section-heading::before {
-  content: "01 / LATEST WORK";
+  content: "01 / LATEST 即ヌキ";
 }
 #announce .section-heading::before {
-  content: "02 / UPCOMING";
+  content: "02 / UPCOMING 近日";
 }
 #past .section-heading::before {
-  content: "03 / PREVIOUS WORKS";
+  content: "03 / PREVIOUS";
 }
 .section-heading h2 {
   margin: 0;
   font-family: var(--font-display-ja);
-  font-weight: 900;
-  font-size: clamp(1.9rem, 5.5vw, 3.4rem);
-  line-height: 1.08;
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  line-height: 1.1;
   letter-spacing: 0.01em;
+  color: var(--field-ink);
+  text-shadow: 3px 3px 0 var(--burst-yellow), 6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+/* headings inside the black back-room band flip light */
+#announce .section-heading h2 {
   color: var(--bone);
+  text-shadow: 2px 2px 0 var(--cinnabar-deep), 4px 4px 0 rgba(0, 0, 0, 0.4);
 }
 html[lang="en"] .section-heading h2 {
   font-family: var(--font-display-en);
-  font-weight: 560;
-  font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 40;
+  font-weight: 400;
+  font-style: normal;
 }
 .section-note {
   margin: 0 0 22px;
   padding-top: 26px;
-  border-top: 1px solid var(--gold-soft);
+  border-top: 1.5px solid var(--gold-soft);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--field-ink);
+}
+#accounts .section-note {
   color: var(--muted);
 }
 #shops .section-note::before,
@@ -297,13 +312,13 @@ html[lang="en"] .section-heading h2 {
   color: var(--gold);
 }
 #shops .section-note::before {
-  content: "04 / STORES";
+  content: "04 / STORES 販売";
 }
 #accounts .section-note::before {
-  content: "05 / NEWS";
+  content: "05 / NEWS 活動情報";
 }
 
-/* ======================= HERO ======================= */
+/* ======================= HERO (on the blazing pink field) ======================= */
 .hero {
   overflow: hidden;
   padding-block: clamp(64px, 13vw, 160px);
@@ -315,11 +330,11 @@ html[lang="en"] .section-heading h2 {
   right: 0;
   display: flex;
   white-space: nowrap;
-  border-bottom: 1px solid var(--grid-line-invert);
+  border-bottom: 1.5px solid var(--gold-soft);
   font-family: var(--font-mono);
   font-size: 0.66rem;
-  letter-spacing: 0.32em;
-  color: var(--gold);
+  letter-spacing: 0.3em;
+  color: var(--field-ink);
   padding-block: 7px;
   will-change: transform;
   animation: ticker 44s linear infinite;
@@ -341,12 +356,14 @@ html[lang="en"] .section-heading h2 {
   top: 50%;
   transform: translateY(-44%);
   font-family: var(--font-display-en);
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 400;
+  font-style: normal;
   font-size: clamp(16rem, 42vw, 38rem);
   line-height: 0.7;
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--gold-soft);
+  -webkit-text-stroke: 2px var(--gold);
+  filter: drop-shadow(0 0 18px var(--rose-glow));
+  opacity: 0.9;
   pointer-events: none;
   user-select: none;
 }
@@ -357,10 +374,11 @@ html[lang="en"] .section-heading h2 {
 .hero-kicker {
   margin: 0 0 18px;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--field-ink);
 }
 .hero-title {
   margin: 0;
@@ -368,31 +386,32 @@ html[lang="en"] .section-heading h2 {
   align-items: flex-start;
   gap: 0.3em;
   font-family: var(--font-display-ja);
-  font-weight: 900;
-  font-size: clamp(3.4rem, 13vw, 9.5rem);
-  line-height: 0.9;
+  font-weight: 400;
+  font-size: clamp(3.6rem, 14vw, 10rem);
+  line-height: 0.92;
   letter-spacing: 0.01em;
-  color: var(--bone);
-  text-shadow: 0 1px 0 rgba(255, 240, 248, 0.3), 0 0 50px var(--rose-glow), 0 0 90px rgba(226, 60, 120, 0.28);
+  color: var(--field-ink);
+  text-shadow: 4px 4px 0 var(--burst-yellow), 8px 8px 0 rgba(0, 0, 0, 0.35), 0 0 60px var(--rose-glow);
 }
 .hero-title-mark {
   font-family: var(--font-mono);
-  font-weight: 400;
+  font-weight: 700;
   font-size: 0.12em;
-  color: var(--cinnabar);
+  color: var(--burst-yellow);
   align-self: flex-start;
   margin-top: 0.4em;
-  text-shadow: 0 0 14px var(--rose-glow);
+  text-shadow: 0 0 16px var(--rose-glow);
 }
 .hero .page-lead {
   display: inline-block;
   max-width: 640px;
   margin: 28px 0 0;
-  padding-top: 22px;
-  border-top: 1px solid var(--gold-soft);
+  padding-top: 18px;
+  border-top: 2px solid var(--burst-yellow);
   font-family: var(--font-body);
+  font-weight: 600;
   font-size: clamp(0.95rem, 2vw, 1.12rem);
-  color: var(--bone);
+  color: var(--field-ink);
   letter-spacing: 0;
 }
 
@@ -412,44 +431,46 @@ html[lang="en"] .section-heading h2 {
   gap: clamp(20px, 3vw, 40px);
   align-items: stretch;
   padding: clamp(24px, 3vw, 40px);
-  background: linear-gradient(160deg, #2e1526, #1c0a18);
-  border: 1px solid var(--gold-soft);
+  background: linear-gradient(160deg, #1c0510, #0c0209);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
   box-shadow: var(--offset), inset 0 1px 0 var(--spec-soft);
   color: var(--bone);
 }
-/* the coveted Latest card glows magenta and breathes */
+/* the latest card = a lit, throbbing shop window */
 #latest .featured-work-card {
   box-shadow: var(--offset-cinnabar), inset 0 1px 0 var(--spec-soft);
+  animation: throb 2.8s ease-in-out infinite;
 }
 #latest .featured-work-card::before {
   animation: breathe 7s ease-in-out infinite;
 }
-/* corner 朱印 rose-gold seals */
+/* corner yellow starburst seals */
 .featured-work-card::before,
 .featured-work-card::after {
   content: "";
   position: absolute;
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   background: var(--reg) center / contain no-repeat;
-  opacity: 0.35;
+  opacity: 0.4;
   transition: opacity 0.4s ease;
+  z-index: 2;
 }
 .featured-work-card::before {
-  top: -11px;
-  left: -11px;
+  top: -12px;
+  left: -12px;
 }
 .featured-work-card::after {
-  bottom: -11px;
-  right: -11px;
+  bottom: -12px;
+  right: -12px;
 }
 .featured-work-card:hover::before,
 .featured-work-card:hover::after {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
-/* cover — blush candle-bloom behind + dim-then-reveal "undressing" on hover */
+/* cover — lit shop window: spotlight, neon rim, hot puddle, sticker-burst */
 .fanza-work-image {
   position: relative;
   display: block;
@@ -458,14 +479,15 @@ html[lang="en"] .section-heading h2 {
   margin-top: clamp(-30px, -2.4vw, -18px);
   margin-left: clamp(-14px, -1.4vw, -8px);
   padding: 0;
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
-  background: transparent;
-  box-shadow: 0 18px 40px -16px rgba(18, 4, 13, 0.9);
+  background: var(--spotlight);
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.92), 0 0 28px -10px var(--cinnabar);
   cursor: pointer;
-  filter: brightness(0.86) saturate(0.92);
+  filter: brightness(0.92) saturate(1);
   transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
 }
+/* candle/neon window-bloom behind the art */
 .fanza-work-image::after {
   content: "";
   position: absolute;
@@ -473,12 +495,31 @@ html[lang="en"] .section-heading h2 {
   z-index: -1;
   background: radial-gradient(closest-side, var(--candle), var(--rose-glow) 45%, transparent 75%);
   filter: blur(18px);
-  opacity: 0.5;
+  opacity: 0.55;
   animation: breathe 7s ease-in-out infinite;
 }
-/* hotter pink heartbeat behind the cover on hover only */
-.fanza-work-image:hover::after {
-  background: radial-gradient(closest-side, rgba(255, 140, 190, 0.55) 0%, var(--candle) 22%, var(--rose-glow) 50%, transparent 76%);
+/* sticker-burst slapped on the cover */
+.fanza-work-image::before {
+  content: "即DL!!";
+  position: absolute;
+  top: -14px;
+  right: -12px;
+  z-index: 3;
+  padding: 9px 11px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--burst-ink);
+  background: var(--burst-yellow);
+  clip-path: polygon(50% 0%, 61% 12%, 79% 6%, 78% 25%, 96% 28%, 84% 43%, 100% 54%, 83% 62%, 91% 80%, 72% 76%, 67% 95%, 50% 84%, 33% 95%, 28% 76%, 9% 80%, 17% 62%, 0% 54%, 16% 43%, 4% 28%, 22% 25%, 21% 6%, 39% 12%);
+  box-shadow: 0 0 16px var(--rose-glow);
+  transform: rotate(11deg);
+  pointer-events: none;
+  animation: wobble 2.2s ease-in-out infinite;
+}
+#latest .fanza-work-image::before {
+  content: "完全版!!";
 }
 .fanza-work-image picture {
   display: block;
@@ -486,6 +527,7 @@ html[lang="en"] .section-heading h2 {
   background: var(--bone-sunken);
   border-radius: calc(var(--radius) - 1px);
   overflow: hidden;
+  box-shadow: 0 26px 40px -18px var(--cinnabar);
 }
 .fanza-work-image img {
   width: 100%;
@@ -494,8 +536,11 @@ html[lang="en"] .section-heading h2 {
 }
 .fanza-work-image:hover {
   transform: translateY(-6px) scale(1.015);
-  filter: brightness(1.04) saturate(1.06);
-  box-shadow: 0 28px 60px -18px rgba(18, 4, 13, 0.9), var(--glow-rose);
+  filter: brightness(1.06) saturate(1.08);
+  box-shadow: 0 28px 60px -18px rgba(0, 0, 0, 0.92), 0 0 50px -8px var(--cinnabar);
+}
+.fanza-work-image:hover::after {
+  background: radial-gradient(closest-side, rgba(255, 70, 170, 0.7) 0%, var(--candle) 24%, var(--rose-glow) 52%, transparent 78%);
 }
 
 .card-body {
@@ -507,30 +552,30 @@ html[lang="en"] .section-heading h2 {
 .card-body h3 {
   margin: 0;
   font-family: var(--font-display-ja);
-  font-weight: 600;
-  font-size: clamp(1.35rem, 3vw, 2.1rem);
-  line-height: 1.5;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  line-height: 1.4;
   letter-spacing: 0.01em;
   color: var(--bone);
 }
 html[lang="en"] .card-body h3 {
   font-family: var(--font-display-en);
-  font-weight: 540;
-  font-style: italic;
-  line-height: 1.12;
-  font-variation-settings: "opsz" 144, "SOFT" 40;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.08;
 }
 .release-date {
   align-self: flex-start;
   margin: 0;
   padding: 6px 12px;
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold);
   border-radius: var(--radius);
   background: var(--bone-sunken);
   font-family: var(--font-mono);
   font-size: 0.74rem;
+  font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--gold);
+  color: var(--burst-yellow);
 }
 .work-summary {
   margin: 2px 0 0;
@@ -538,7 +583,7 @@ html[lang="en"] .card-body h3 {
   font-size: 0.93rem;
 }
 
-/* action row — velvet plum pills with satin sheen */
+/* action row — loud pills */
 .link-row {
   display: grid;
   gap: 10px;
@@ -552,25 +597,24 @@ html[lang="en"] .card-body h3 {
   justify-content: center;
   min-height: 50px;
   padding: 12px 18px 12px 26px;
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 10px 24px -14px rgba(18, 4, 13, 0.9), inset 0 1px 0 var(--spec-soft);
+  box-shadow: 0 10px 24px -14px #000, inset 0 1px 0 var(--spec-soft);
   transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease;
 }
-/* sheen band (one-shot on hover) */
 .shop-link::after {
   content: "";
   position: absolute;
   inset: 0;
   transform: translateX(-150%);
-  background: linear-gradient(110deg, transparent, rgba(255, 224, 240, 0.28), transparent);
+  background: linear-gradient(110deg, transparent, rgba(255, 224, 240, 0.32), transparent);
   pointer-events: none;
 }
 .shop-link:hover::after {
@@ -578,13 +622,12 @@ html[lang="en"] .card-body h3 {
 }
 .shop-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px -14px rgba(18, 4, 13, 0.9), 0 0 24px -6px var(--rose-glow);
+  box-shadow: 0 16px 32px -14px #000, 0 0 28px -6px var(--cinnabar);
 }
 .shop-link:active {
   transform: translateY(0);
-  box-shadow: 0 6px 14px -10px rgba(18, 4, 13, 0.9);
+  box-shadow: 0 6px 14px -10px #000;
 }
-/* brand glowing edge seams quarantined to the left (cyan dot kept as cool jewel) */
 .shop-link.fanza,
 .shop-link.dlsite {
   background: var(--bone-raised);
@@ -603,24 +646,27 @@ html[lang="en"] .card-body h3 {
 }
 .shop-link.fanza::before {
   background: var(--fanza);
-  box-shadow: 0 0 10px var(--fanza);
+  box-shadow: 0 0 14px var(--fanza);
 }
 .shop-link.dlsite::before {
   background: var(--dlsite);
-  box-shadow: 0 0 10px var(--dlsite);
+  box-shadow: 0 0 14px var(--dlsite);
 }
 .shop-link.fanza:hover::before,
 .shop-link.dlsite:hover::before {
   width: 100%;
-  opacity: 0.28;
+  opacity: 0.32;
   box-shadow: none;
 }
-/* Sample = primary jewel-magenta CTA with a perpetual wet sheen */
+/* Sample = the SCREAMING buy CTA */
 .shop-link.sample {
   padding-left: 26px;
-  background: linear-gradient(180deg, #e23c79, #b11a5c);
+  background: linear-gradient(180deg, #ff2f74, #d2005a);
+  border: 1.5px solid var(--burst-yellow);
   color: var(--bone);
-  box-shadow: 0 10px 24px -14px rgba(18, 4, 13, 0.9), 0 0 30px -8px var(--rose-glow), inset 0 1px 0 var(--spec-soft);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 24px -12px #000, 0 0 34px -6px var(--rose-glow), inset 0 1px 0 var(--spec-soft);
+  animation: throb 2.4s ease-in-out infinite;
 }
 .shop-link.sample::before {
   content: "▸";
@@ -633,8 +679,8 @@ html[lang="en"] .card-body h3 {
   animation: sheen 3.6s ease-in-out infinite;
 }
 .shop-link.sample:hover {
-  background: linear-gradient(180deg, #ee5a90, #ae1a5e);
-  box-shadow: 0 16px 34px -14px rgba(18, 4, 13, 0.9), 0 0 38px -6px var(--rose-glow);
+  background: linear-gradient(180deg, #ff5a96, #ae1a5e);
+  box-shadow: var(--throb-glow);
 }
 
 /* ======================= STORE CARDS ======================= */
@@ -644,7 +690,7 @@ html[lang="en"] .card-body h3 {
 .shop-card {
   position: relative;
   background: var(--bone-raised);
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
   box-shadow: var(--offset), inset 0 1px 0 var(--spec-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -657,7 +703,7 @@ html[lang="en"] .card-body h3 {
   right: 0;
   bottom: 0;
   height: 0;
-  background: linear-gradient(0deg, rgba(226, 60, 120, 0.32), rgba(224, 168, 158, 0.12));
+  background: linear-gradient(0deg, rgba(255, 47, 116, 0.45), rgba(255, 210, 30, 0.18));
   transition: height 0.4s ease;
   z-index: 0;
 }
@@ -681,12 +727,12 @@ html[lang="en"] .card-body h3 {
   width: 38px;
   height: 38px;
   object-fit: contain;
-  filter: drop-shadow(0 0 6px var(--gold-soft));
+  filter: drop-shadow(0 0 7px var(--cinnabar));
 }
 .shop-card .label {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--bone);
@@ -710,7 +756,7 @@ html[lang="en"] .card-body h3 {
   min-height: 120px;
   padding: 20px 14px;
   background: var(--bone-raised);
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
   box-shadow: var(--offset), inset 0 1px 0 var(--spec-soft);
   color: var(--bone);
@@ -725,11 +771,12 @@ html[lang="en"] .card-body h3 {
   width: 30px;
   height: 30px;
   object-fit: contain;
-  filter: drop-shadow(0 0 6px var(--gold-soft));
+  filter: drop-shadow(0 0 7px var(--cinnabar));
 }
 .social-card strong {
   font-family: var(--font-mono);
   font-size: 0.82rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bone);
@@ -739,7 +786,7 @@ html[lang="en"] .card-body h3 {
 .footer {
   position: relative;
   padding: 40px var(--gutter) 56px;
-  background: var(--ink);
+  background: var(--wine);
   color: var(--muted);
   text-align: center;
   display: grid;
@@ -748,7 +795,6 @@ html[lang="en"] .card-body h3 {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
 }
-/* satin ribbon */
 .footer::before {
   content: "";
   display: block;
@@ -756,8 +802,8 @@ html[lang="en"] .card-body h3 {
   height: 6px;
   margin: 0 auto 18px;
   border-radius: 3px;
-  background: linear-gradient(90deg, var(--gold) 0 25%, var(--rose) 25% 55%, var(--cinnabar) 55% 80%, var(--wine) 80% 100%);
-  box-shadow: 0 0 16px -4px var(--rose-glow);
+  background: linear-gradient(90deg, var(--burst-yellow) 0 25%, var(--rose) 25% 55%, var(--cinnabar) 55% 80%, #2a0016 80% 100%);
+  box-shadow: 0 0 18px -4px var(--rose-glow);
 }
 .affiliate-note {
   opacity: 0.7;
@@ -770,7 +816,7 @@ html[lang="en"] .card-body h3 {
 }
 .section-focus .featured-work-card::before,
 .section-focus .featured-work-card::after {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 @keyframes regblink {
   0%, 100% {
@@ -781,7 +827,7 @@ html[lang="en"] .card-body h3 {
   }
 }
 
-/* ======================= SAMPLE LIGHTBOX (private viewing room) ======================= */
+/* ======================= SAMPLE LIGHTBOX ======================= */
 .sample-overlay {
   position: fixed;
   inset: 0;
@@ -805,10 +851,10 @@ html[lang="en"] .card-body h3 {
   height: min(94vh, 900px);
   margin: 3vh auto;
   padding: 16px;
-  background: linear-gradient(160deg, #2e1526, #1c0a18);
-  border: 1px solid var(--gold-soft);
+  background: linear-gradient(160deg, #1c0510, #0c0209);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius-lg);
-  box-shadow: 0 40px 120px -30px rgba(14, 4, 11, 0.95), 0 0 60px -20px var(--rose-glow);
+  box-shadow: 0 40px 120px -30px #000, 0 0 70px -16px var(--cinnabar);
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   gap: 12px;
@@ -817,20 +863,20 @@ html[lang="en"] .card-body h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--gold-soft);
+  border-bottom: 1.5px solid var(--gold-soft);
   padding-bottom: 10px;
 }
 .sample-header h2 {
   margin: 0;
   font-family: var(--font-display-ja);
-  font-weight: 600;
-  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-weight: 400;
+  font-size: clamp(1rem, 2.4vw, 1.5rem);
   color: var(--bone);
 }
 .sample-close {
   width: 42px;
   height: 42px;
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
   background: var(--bone-raised);
   color: var(--bone);
@@ -842,7 +888,7 @@ html[lang="en"] .card-body h3 {
 .sample-close:hover {
   background: var(--cinnabar);
   color: var(--bone);
-  box-shadow: 0 0 24px -6px var(--rose-glow);
+  box-shadow: 0 0 30px -4px var(--cinnabar);
 }
 .sample-stage {
   position: relative;
@@ -851,7 +897,7 @@ html[lang="en"] .card-body h3 {
   place-items: center;
   overflow: hidden;
   background: var(--bone-sunken);
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
 }
 .sample-page-current {
@@ -907,12 +953,13 @@ html[lang="en"] .card-body h3 {
   position: relative;
   min-height: 44px;
   padding: 10px 20px;
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
   background: var(--bone-raised);
   color: var(--bone);
   font-family: var(--font-mono);
   font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
@@ -924,7 +971,7 @@ html[lang="en"] .card-body h3 {
   background: var(--cinnabar);
   color: var(--bone);
   transform: translateY(-2px);
-  box-shadow: 0 0 28px -6px var(--rose-glow);
+  box-shadow: 0 0 30px -4px var(--cinnabar);
 }
 .sample-help {
   margin: 0;
@@ -935,7 +982,7 @@ html[lang="en"] .card-body h3 {
   color: var(--muted);
 }
 
-/* ======================= AGE GATE (velvet rope) ======================= */
+/* ======================= AGE GATE ======================= */
 .age-gate {
   position: fixed;
   inset: 0;
@@ -954,35 +1001,35 @@ html[lang="en"] .card-body h3 {
   position: relative;
   width: min(94vw, 480px);
   padding: 30px 28px;
-  background: linear-gradient(160deg, #2e1526, #1c0a18);
-  border: 1px solid var(--gold-soft);
+  background: linear-gradient(160deg, #1c0510, #0c0209);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius-lg);
-  box-shadow: 0 40px 120px -30px rgba(14, 4, 11, 0.95), 0 0 60px -18px var(--rose-glow);
+  box-shadow: 0 40px 120px -30px #000, 0 0 70px -16px var(--cinnabar);
   text-align: center;
 }
-/* discreet members' door 18+ bar */
 .age-gate-panel::before {
-  content: "R-18 / 18+ ONLY";
+  content: "R-18 / 18+ 必見!!";
   display: block;
   margin: -30px -28px 22px;
   padding: 9px;
-  background: linear-gradient(90deg, #e23c79, #ae1a5e);
-  color: #f3d9de;
+  background: linear-gradient(90deg, #ff2f74, #d2005a);
+  color: #fff2f8;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.3em;
-  box-shadow: 0 0 18px -6px var(--rose-glow);
+  border-top: 2px solid var(--burst-yellow);
+  box-shadow: 0 0 22px -4px var(--cinnabar);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 .age-gate-icon {
   width: 60px;
   height: 60px;
   margin: 0 auto 14px;
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 0 20px -6px var(--rose-glow);
+  box-shadow: 0 0 20px -6px var(--cinnabar);
 }
 .age-gate-icon img {
   width: 100%;
@@ -992,8 +1039,8 @@ html[lang="en"] .card-body h3 {
 .age-gate-panel h2 {
   margin: 0 0 10px;
   font-family: var(--font-display-ja);
-  font-weight: 900;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 4.4vw, 2.2rem);
   color: var(--bone);
 }
 .age-gate-panel p {
@@ -1008,7 +1055,7 @@ html[lang="en"] .card-body h3 {
 }
 .age-gate-button {
   min-height: 50px;
-  border: 1px solid var(--gold-soft);
+  border: 1.5px solid var(--gold-soft);
   border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -1022,19 +1069,20 @@ html[lang="en"] .card-body h3 {
   transform: translateY(-2px);
 }
 .age-yes {
-  background: linear-gradient(180deg, #e23c79, #b11a5c);
+  background: linear-gradient(180deg, #ff2f74, #d2005a);
   color: var(--bone);
-  box-shadow: 0 10px 24px -14px rgba(18, 4, 13, 0.9), 0 0 30px -8px var(--rose-glow);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 24px -14px #000, 0 0 30px -8px var(--rose-glow);
 }
 .age-yes:hover {
-  box-shadow: 0 14px 30px -12px rgba(18, 4, 13, 0.9), 0 0 40px -6px var(--rose-glow);
+  box-shadow: var(--throb-glow);
 }
 .age-no {
   background: transparent;
   color: var(--muted);
 }
 .age-no:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--bone);
 }
 
@@ -1060,6 +1108,22 @@ body.age-gate-open {
   }
   to {
     transform: translateX(150%);
+  }
+}
+@keyframes throb {
+  0%, 100% {
+    box-shadow: var(--offset-cinnabar), inset 0 1px 0 var(--spec-soft);
+  }
+  50% {
+    box-shadow: var(--throb-glow), inset 0 1px 0 var(--spec-soft);
+  }
+}
+@keyframes wobble {
+  0%, 100% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(14deg);
   }
 }
 @keyframes rise {
@@ -1140,18 +1204,22 @@ body.age-gate-open {
   .hero .page-lead,
   .brand-mark,
   .fanza-work-image::after,
+  .fanza-work-image::before,
+  .featured-work-card::before,
+  .featured-work-card::after,
+  #latest .featured-work-card,
   #latest .featured-work-card::before,
+  .shop-link.sample,
   .shop-link.sample::after,
   .section-focus .featured-work-card {
     animation: none;
   }
-  /* freeze covers in the lit state */
   .fanza-work-image {
     filter: brightness(1) saturate(1);
   }
   .fanza-work-image:hover {
     transform: none;
-    box-shadow: 0 28px 60px -18px rgba(18, 4, 13, 0.9), var(--glow-rose);
+    box-shadow: 0 28px 60px -18px rgba(0, 0, 0, 0.92), 0 0 50px -8px var(--cinnabar);
   }
   .shop-link:hover::after {
     animation: none;
