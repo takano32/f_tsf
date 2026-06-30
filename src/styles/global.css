@@ -1,46 +1,48 @@
 /* =========================================================================
-   TSFのF — BOUDOIR NOIR / 深夜のサロン (Midnight Salon)
-   An after-hours adult salon: dark wine-velvet, champagne-gold hairlines,
-   candle-bloom behind every cover, a single painted-mouth red on the buy CTA.
-   Sensual through LIGHT, not graphics. A re-skin of the PROOF SHEET structure.
+   TSFのF — LACQUERED PLUM BOUDOIR / 漆黒のローズ・サロン
+   Pink-keynote adult salon: the whole room is a deep blackcurrant-plum,
+   washed with blush-magenta light, seamed in rose-gold, with a single wet
+   stroke of jewel-magenta on the lips (Sample CTA + R-18 bar only).
+   Sensual through LIGHT, not graphics. A palette re-tune of BOUDOIR NOIR.
    ========================================================================= */
 
 :root {
-  /* canvas / surfaces */
-  --ink: #16090e;          /* page canvas + deepest velvet */
-  --bone: #ece0cf;         /* champagne-ivory = primary text/marks */
-  --bone-raised: #20121a;  /* raised velvet card/panel surface */
-  --bone-sunken: #0e0509;  /* sunken wells / lightbox stage / image matte */
-  /* accent — the painted mouth (the only loud thing) */
-  --cinnabar: #c8324a;
-  --cinnabar-deep: #93132a;
+  /* canvas / surfaces — the dominant pink is the FIELD itself (rose-black plum) */
+  --ink: #1e0a19;          /* page canvas + deepest velvet — dark blackcurrant-plum */
+  --sky-top: #3e1330;      /* mauve-plum crown for the twilight wash */
+  --bone: #f1dbe0;         /* blush-pearl ivory text/marks (~13:1 AA on plum) */
+  --bone-raised: #2a1220;  /* raised lacquered mauve-plum card/panel surface */
+  --bone-sunken: #120510;  /* sunken wells / lightbox stage / image matte (plum-black) */
+  /* accent — the painted mouth, hot lacquered jewel-magenta (Sample CTA + R-18 only) */
+  --cinnabar: #e23c79;
+  --cinnabar-deep: #ae1a5e;
   /* text */
-  --muted: #b59a93;        /* warm rose-taupe, ~5:1 AA on canvas */
-  --muted-invert: #6e5860;
-  /* brand inks (quarantined to edge seams) */
+  --muted: #c6a0b2;        /* rose-mauve, ~7.8:1 AA on the plum field */
+  --muted-invert: #6e4a5e;
+  /* brand inks (quarantined to edge seams/dots — the cyan dot is a kept cool jewel) */
   --fanza: #e63950;
   --dlsite: #2ba7db;
-  /* new sensual tokens */
-  --gold: #d9b779;
-  --gold-soft: rgba(217, 183, 121, 0.2);
-  --rose: #e3a39b;
-  --rose-glow: rgba(227, 150, 150, 0.4);
-  --hada: #e8b79c;         /* flesh/peach flush warmth */
-  --candle: rgba(232, 176, 120, 0.55);
-  --wine: #2a0f18;         /* deep-wine accent band (back rooms) */
+  /* metal — rose-gold, so even the hairlines tilt pink */
+  --gold: #dfaaa0;
+  --gold-soft: rgba(224, 168, 158, 0.24);
+  --rose: #e89fb0;
+  --rose-glow: rgba(234, 110, 165, 0.45);
+  --hada: #ecb2a8;         /* flesh/skin flush — pinker peach so covers glow like skin */
+  --candle: rgba(244, 146, 168, 0.52);  /* blush-rose candlelight bloom behind covers */
+  --wine: #38112a;         /* rosewood-plum back-room band */
   --glow-rose: 0 0 60px -6px var(--rose-glow);
-  --spec-soft: rgba(255, 255, 255, 0.1);
-  --velvet-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 40%);
+  --spec-soft: rgba(255, 238, 246, 0.1);
+  --velvet-sheen: linear-gradient(135deg, rgba(255, 240, 248, 0.05), rgba(255, 240, 248, 0) 40%);
   /* retired aberration channels → repointed to glow so stray refs stay safe */
   --aberr-warm: var(--rose-glow);
   --aberr-cool: var(--gold-soft);
-  /* lines / overlays — warm gold seams */
-  --grid-line: rgba(217, 183, 121, 0.045);
-  --grid-line-invert: rgba(217, 183, 121, 0.06);
-  --scrim: rgba(8, 4, 7, 0.94);
-  /* shadows — soft low-key drop + gold hairline ring */
-  --offset: 0 22px 48px -22px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--gold-soft);
-  --offset-cinnabar: 0 0 46px -8px rgba(200, 90, 80, 0.45), 0 22px 48px -22px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--gold-soft);
+  /* lines / overlays — rose-gold seams */
+  --grid-line: rgba(224, 168, 158, 0.05);
+  --grid-line-invert: rgba(234, 130, 165, 0.07);
+  --scrim: rgba(14, 4, 11, 0.94);
+  /* shadows — soft low-key drop + rose-gold ring; plum-tinted (never dirty black) */
+  --offset: 0 22px 48px -22px rgba(18, 4, 13, 0.82), 0 0 0 1px var(--gold-soft);
+  --offset-cinnabar: 0 0 46px -8px rgba(226, 60, 120, 0.45), 0 22px 48px -22px rgba(18, 4, 13, 0.82), 0 0 0 1px var(--gold-soft);
   /* metrics */
   --max: 1240px;
   --gutter: clamp(20px, 5vw, 56px);
@@ -49,13 +51,15 @@
   --bw-heavy: 2.5px;
   --radius: 4px;
   --radius-lg: 6px;
-  /* fonts — EN display swapped to sultry Fraunces; mono KEEPS Murecho JA fallback */
+  /* fonts — EN display Fraunces (sultry italic); mono KEEPS Murecho JA fallback (no tofu) */
   --font-display-ja: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-display-en: "Fraunces", "Hiragino Mincho ProN", Georgia, serif;
   --font-body: "Murecho", "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
   --font-mono: "Martian Mono", "Murecho", ui-monospace, "Hiragino Kaku Gothic ProN", "Yu Gothic", monospace;
-  /* 朱印 hanko seal rendered in gold foil (red stays rare) */
-  --reg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Crect x='1.5' y='1.5' width='19' height='19' rx='2' fill='none' stroke='%23D9B779' stroke-width='1.6'/%3E%3Cpath d='M6 6h10M11 6v10M6 16h10' stroke='%23D9B779' stroke-width='1.3' fill='none'/%3E%3C/svg%3E");
+  /* 朱印 hanko seal rendered in ROSE-GOLD foil (jewel-magenta stays rare) */
+  --reg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Crect x='1.5' y='1.5' width='19' height='19' rx='2' fill='none' stroke='%23DFAAA0' stroke-width='1.6'/%3E%3Cpath d='M6 6h10M11 6v10M6 16h10' stroke='%23DFAAA0' stroke-width='1.3' fill='none'/%3E%3C/svg%3E");
+  /* ACCENT-RATIO BUDGET: loud jewel-magenta (--cinnabar) is permitted on the Sample CTA
+     + R-18 bar ONLY (~5% of pixels). Do not smear it, or the design slides into slop. */
 }
 
 * {
@@ -72,10 +76,11 @@ body {
   color: var(--bone);
   background-color: var(--ink);
   background-image:
-    radial-gradient(120% 80% at 50% -10%, rgba(120, 40, 55, 0.3), transparent 60%),
-    radial-gradient(40vw 40vw at 12% 4%, rgba(227, 150, 150, 0.1), transparent 60%),
-    radial-gradient(34vw 34vw at 92% 26%, rgba(232, 176, 120, 0.08), transparent 62%),
-    radial-gradient(80% 60% at 50% 120%, rgba(0, 0, 0, 0.6), transparent),
+    radial-gradient(120% 85% at 50% -12%, rgba(150, 30, 92, 0.3), transparent 60%),
+    radial-gradient(40vw 40vw at 12% 4%, rgba(234, 118, 165, 0.13), transparent 60%),
+    radial-gradient(34vw 34vw at 92% 26%, rgba(238, 140, 168, 0.1), transparent 62%),
+    radial-gradient(82% 60% at 50% 122%, rgba(14, 4, 11, 0.66), transparent),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--ink) 46%, var(--bone-sunken) 100%),
     repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px 32px),
     repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px 32px);
   background-attachment: fixed;
@@ -103,13 +108,13 @@ img {
   height: auto;
 }
 
-/* thin champagne salon frame + intimate vignette (eyes fall to the lit center) */
+/* thin rose-gold salon frame + intimate plum vignette */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   border: 1px solid var(--gold-soft);
-  box-shadow: inset 0 0 200px 40px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 0 200px 40px rgba(18, 4, 13, 0.72);
   pointer-events: none;
   z-index: 90;
 }
@@ -131,7 +136,7 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 80;
-  background: rgba(22, 9, 14, 0.72);
+  background: rgba(30, 10, 25, 0.72);
   backdrop-filter: blur(14px) saturate(120%);
   border-bottom: 1px solid var(--gold-soft);
 }
@@ -220,13 +225,13 @@ section > *,
   margin-inline: auto;
 }
 
-/* deep-wine "back rooms" — the darkest, most intimate bands */
+/* rosewood-plum "back rooms" — the deepest, most saturated pink bands */
 .band-ink,
 #announce,
 #accounts {
   background-color: var(--wine);
   background-image:
-    radial-gradient(60% 50% at 50% 30%, rgba(180, 70, 80, 0.18), transparent 70%),
+    radial-gradient(60% 50% at 50% 30%, rgba(226, 60, 120, 0.2), transparent 70%),
     repeating-linear-gradient(to right, var(--grid-line-invert) 0 1px, transparent 1px 32px),
     repeating-linear-gradient(to bottom, var(--grid-line-invert) 0 1px, transparent 1px 32px);
   border-top: 1px solid var(--gold-soft);
@@ -368,7 +373,7 @@ html[lang="en"] .section-heading h2 {
   line-height: 0.9;
   letter-spacing: 0.01em;
   color: var(--bone);
-  text-shadow: 0 0 50px var(--rose-glow), 0 0 90px rgba(180, 70, 80, 0.25);
+  text-shadow: 0 1px 0 rgba(255, 240, 248, 0.3), 0 0 50px var(--rose-glow), 0 0 90px rgba(226, 60, 120, 0.28);
 }
 .hero-title-mark {
   font-family: var(--font-mono);
@@ -407,20 +412,20 @@ html[lang="en"] .section-heading h2 {
   gap: clamp(20px, 3vw, 40px);
   align-items: stretch;
   padding: clamp(24px, 3vw, 40px);
-  background: linear-gradient(160deg, #24141c, #190c12);
+  background: linear-gradient(160deg, #2e1526, #1c0a18);
   border: 1px solid var(--gold-soft);
   border-radius: var(--radius);
   box-shadow: var(--offset), inset 0 1px 0 var(--spec-soft);
   color: var(--bone);
 }
-/* the coveted Latest card glows rose and breathes */
+/* the coveted Latest card glows magenta and breathes */
 #latest .featured-work-card {
   box-shadow: var(--offset-cinnabar), inset 0 1px 0 var(--spec-soft);
 }
 #latest .featured-work-card::before {
   animation: breathe 7s ease-in-out infinite;
 }
-/* corner 朱印 gold seals */
+/* corner 朱印 rose-gold seals */
 .featured-work-card::before,
 .featured-work-card::after {
   content: "";
@@ -444,7 +449,7 @@ html[lang="en"] .section-heading h2 {
   opacity: 0.8;
 }
 
-/* cover — candle-bloom behind + dim-then-reveal "undressing" on hover */
+/* cover — blush candle-bloom behind + dim-then-reveal "undressing" on hover */
 .fanza-work-image {
   position: relative;
   display: block;
@@ -456,7 +461,7 @@ html[lang="en"] .section-heading h2 {
   border: 1px solid var(--gold-soft);
   border-radius: var(--radius);
   background: transparent;
-  box-shadow: 0 18px 40px -16px #000;
+  box-shadow: 0 18px 40px -16px rgba(18, 4, 13, 0.9);
   cursor: pointer;
   filter: brightness(0.86) saturate(0.92);
   transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
@@ -470,6 +475,10 @@ html[lang="en"] .section-heading h2 {
   filter: blur(18px);
   opacity: 0.5;
   animation: breathe 7s ease-in-out infinite;
+}
+/* hotter pink heartbeat behind the cover on hover only */
+.fanza-work-image:hover::after {
+  background: radial-gradient(closest-side, rgba(255, 140, 190, 0.55) 0%, var(--candle) 22%, var(--rose-glow) 50%, transparent 76%);
 }
 .fanza-work-image picture {
   display: block;
@@ -486,7 +495,7 @@ html[lang="en"] .section-heading h2 {
 .fanza-work-image:hover {
   transform: translateY(-6px) scale(1.015);
   filter: brightness(1.04) saturate(1.06);
-  box-shadow: 0 28px 60px -18px #000, var(--glow-rose);
+  box-shadow: 0 28px 60px -18px rgba(18, 4, 13, 0.9), var(--glow-rose);
 }
 
 .card-body {
@@ -529,7 +538,7 @@ html[lang="en"] .card-body h3 {
   font-size: 0.93rem;
 }
 
-/* action row — velvet pills with satin sheen */
+/* action row — velvet plum pills with satin sheen */
 .link-row {
   display: grid;
   gap: 10px;
@@ -552,7 +561,7 @@ html[lang="en"] .card-body h3 {
   text-transform: uppercase;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 10px 24px -14px #000, inset 0 1px 0 var(--spec-soft);
+  box-shadow: 0 10px 24px -14px rgba(18, 4, 13, 0.9), inset 0 1px 0 var(--spec-soft);
   transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease;
 }
 /* sheen band (one-shot on hover) */
@@ -561,7 +570,7 @@ html[lang="en"] .card-body h3 {
   position: absolute;
   inset: 0;
   transform: translateX(-150%);
-  background: linear-gradient(110deg, transparent, rgba(255, 235, 210, 0.25), transparent);
+  background: linear-gradient(110deg, transparent, rgba(255, 224, 240, 0.28), transparent);
   pointer-events: none;
 }
 .shop-link:hover::after {
@@ -569,13 +578,13 @@ html[lang="en"] .card-body h3 {
 }
 .shop-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px -14px #000, 0 0 24px -6px var(--rose-glow);
+  box-shadow: 0 16px 32px -14px rgba(18, 4, 13, 0.9), 0 0 24px -6px var(--rose-glow);
 }
 .shop-link:active {
   transform: translateY(0);
-  box-shadow: 0 6px 14px -10px #000;
+  box-shadow: 0 6px 14px -10px rgba(18, 4, 13, 0.9);
 }
-/* brand glowing edge seams quarantined to the left */
+/* brand glowing edge seams quarantined to the left (cyan dot kept as cool jewel) */
 .shop-link.fanza,
 .shop-link.dlsite {
   background: var(--bone-raised);
@@ -606,12 +615,12 @@ html[lang="en"] .card-body h3 {
   opacity: 0.28;
   box-shadow: none;
 }
-/* Sample = primary lipstick CTA with a perpetual wet sheen */
+/* Sample = primary jewel-magenta CTA with a perpetual wet sheen */
 .shop-link.sample {
   padding-left: 26px;
-  background: linear-gradient(180deg, #c8324a, #a11e33);
+  background: linear-gradient(180deg, #e23c79, #b11a5c);
   color: var(--bone);
-  box-shadow: 0 10px 24px -14px #000, 0 0 30px -8px var(--rose-glow), inset 0 1px 0 var(--spec-soft);
+  box-shadow: 0 10px 24px -14px rgba(18, 4, 13, 0.9), 0 0 30px -8px var(--rose-glow), inset 0 1px 0 var(--spec-soft);
 }
 .shop-link.sample::before {
   content: "▸";
@@ -624,8 +633,8 @@ html[lang="en"] .card-body h3 {
   animation: sheen 3.6s ease-in-out infinite;
 }
 .shop-link.sample:hover {
-  background: linear-gradient(180deg, #d83a54, #93132a);
-  box-shadow: 0 16px 34px -14px #000, 0 0 38px -6px var(--rose-glow);
+  background: linear-gradient(180deg, #ee5a90, #ae1a5e);
+  box-shadow: 0 16px 34px -14px rgba(18, 4, 13, 0.9), 0 0 38px -6px var(--rose-glow);
 }
 
 /* ======================= STORE CARDS ======================= */
@@ -648,7 +657,7 @@ html[lang="en"] .card-body h3 {
   right: 0;
   bottom: 0;
   height: 0;
-  background: linear-gradient(0deg, rgba(200, 80, 90, 0.35), rgba(217, 183, 121, 0.1));
+  background: linear-gradient(0deg, rgba(226, 60, 120, 0.32), rgba(224, 168, 158, 0.12));
   transition: height 0.4s ease;
   z-index: 0;
 }
@@ -739,7 +748,7 @@ html[lang="en"] .card-body h3 {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
 }
-/* satin ribbon (was the CMYK calibration strip) */
+/* satin ribbon */
 .footer::before {
   content: "";
   display: block;
@@ -796,10 +805,10 @@ html[lang="en"] .card-body h3 {
   height: min(94vh, 900px);
   margin: 3vh auto;
   padding: 16px;
-  background: linear-gradient(160deg, #24141c, #190c12);
+  background: linear-gradient(160deg, #2e1526, #1c0a18);
   border: 1px solid var(--gold-soft);
   border-radius: var(--radius-lg);
-  box-shadow: 0 40px 120px -30px #000, 0 0 60px -20px var(--rose-glow);
+  box-shadow: 0 40px 120px -30px rgba(14, 4, 11, 0.95), 0 0 60px -20px var(--rose-glow);
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   gap: 12px;
@@ -945,10 +954,10 @@ html[lang="en"] .card-body h3 {
   position: relative;
   width: min(94vw, 480px);
   padding: 30px 28px;
-  background: linear-gradient(160deg, #24141c, #190c12);
+  background: linear-gradient(160deg, #2e1526, #1c0a18);
   border: 1px solid var(--gold-soft);
   border-radius: var(--radius-lg);
-  box-shadow: 0 40px 120px -30px #000, 0 0 60px -18px var(--rose-glow);
+  box-shadow: 0 40px 120px -30px rgba(14, 4, 11, 0.95), 0 0 60px -18px var(--rose-glow);
   text-align: center;
 }
 /* discreet members' door 18+ bar */
@@ -957,8 +966,8 @@ html[lang="en"] .card-body h3 {
   display: block;
   margin: -30px -28px 22px;
   padding: 9px;
-  background: linear-gradient(90deg, #c8324a, #93132a);
-  color: var(--gold);
+  background: linear-gradient(90deg, #e23c79, #ae1a5e);
+  color: #f3d9de;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
@@ -1013,12 +1022,12 @@ html[lang="en"] .card-body h3 {
   transform: translateY(-2px);
 }
 .age-yes {
-  background: linear-gradient(180deg, #c8324a, #a11e33);
+  background: linear-gradient(180deg, #e23c79, #b11a5c);
   color: var(--bone);
-  box-shadow: 0 10px 24px -14px #000, 0 0 30px -8px var(--rose-glow);
+  box-shadow: 0 10px 24px -14px rgba(18, 4, 13, 0.9), 0 0 30px -8px var(--rose-glow);
 }
 .age-yes:hover {
-  box-shadow: 0 14px 30px -12px #000, 0 0 40px -6px var(--rose-glow);
+  box-shadow: 0 14px 30px -12px rgba(18, 4, 13, 0.9), 0 0 40px -6px var(--rose-glow);
 }
 .age-no {
   background: transparent;
@@ -1142,7 +1151,7 @@ body.age-gate-open {
   }
   .fanza-work-image:hover {
     transform: none;
-    box-shadow: 0 28px 60px -18px #000, var(--glow-rose);
+    box-shadow: 0 28px 60px -18px rgba(18, 4, 13, 0.9), var(--glow-rose);
   }
   .shop-link:hover::after {
     animation: none;
