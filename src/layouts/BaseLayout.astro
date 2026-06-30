@@ -42,7 +42,13 @@ const jsonLd = {
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="favicon.png" />
-    <meta name="theme-color" content="#7a3cff" />
+    <meta name="theme-color" content="#14110D" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Martian+Mono:wght@400..700&family=Murecho:wght@400..600&family=Zen+Old+Mincho:wght@600;900&display=swap"
+      rel="stylesheet"
+    />
     <meta property="og:site_name" content="TSFのF" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={ogUrl} />
@@ -68,9 +74,18 @@ const jsonLd = {
   <body class={bodyClass} data-focus-section={focusSection}>
     <SiteHeader page={page} />
     <main id="top">
-      <div class="page-title">
-        <p class="page-lead" data-ja="空想的性転換（ＴＳＦ）作品を制作している同人サークル『ＴＳＦのＦ』のリンク集です。" data-en="A link hub for TSF no F, a doujin circle creating fictional gender transformation (TSF) works.">空想的性転換（ＴＳＦ）作品を制作している同人サークル『ＴＳＦのＦ』のリンク集です。</p>
-      </div>
+      <section class="hero band-ink" aria-label="TSFのF">
+        <div class="hero-ticker" aria-hidden="true">
+          <span>TSFのF —— 空想的性転換 —— TSF —— 校正刷 —— FANTASY GENDER TRANSFORMATION —— </span>
+          <span>TSFのF —— 空想的性転換 —— TSF —— 校正刷 —— FANTASY GENDER TRANSFORMATION —— </span>
+        </div>
+        <span class="hero-watermark" aria-hidden="true">F</span>
+        <div class="hero-inner">
+          <p class="hero-kicker">校正刷 / PROOF SHEET — DOUJIN CIRCLE</p>
+          <h1 class="hero-title"><span class="hero-title-main">TSFのF</span><span class="hero-title-mark" aria-hidden="true">✛</span></h1>
+          <p class="page-lead" data-ja="空想的性転換（ＴＳＦ）作品を制作している同人サークル『ＴＳＦのＦ』のリンク集です。" data-en="A link hub for TSF no F, a doujin circle creating fictional gender transformation (TSF) works.">空想的性転換（ＴＳＦ）作品を制作している同人サークル『ＴＳＦのＦ』のリンク集です。</p>
+        </div>
+      </section>
       <slot />
     </main>
     <SampleOverlay />
