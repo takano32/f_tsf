@@ -1,0 +1,28 @@
+---
+interface Props {
+  /** home: 自ページ内アンカー / announce: index.html へのリンク */
+  page: 'home' | 'announce';
+}
+
+const { page } = Astro.props;
+const isHome = page === 'home';
+const brandHref = isHome ? '#top' : 'index.html';
+const latestHref = isHome ? '#latest' : 'index.html#latest';
+const announceHref = isHome ? 'announce.html' : '#announce';
+---
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href={brandHref}>
+      <span class="brand-mark"><img src="favicon.png" alt="TSFのF" /></span>
+      <span>TSFのF</span>
+    </a>
+    <div class="nav-links">
+      <a href={latestHref} data-ja="最新作" data-en="Latest Work">最新作</a>
+      <a href={announceHref} data-ja="新作予告" data-en="Upcoming Work">新作予告</a>
+      <a href="#past" data-ja="これまでの作品" data-en="Previous Works">これまでの作品</a>
+      <a href="#shops" data-ja="販売ページ" data-en="Stores">販売ページ</a>
+      <a href="#accounts" data-ja="お知らせ・活動情報" data-en="News &amp; Activity">お知らせ・活動情報</a>
+    </div>
+  </nav>
+</header>

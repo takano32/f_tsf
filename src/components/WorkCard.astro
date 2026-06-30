@@ -1,0 +1,30 @@
+---
+import type { Work } from '../data/works';
+import { workImage } from '../data/works';
+
+interface Props {
+  work: Work;
+}
+
+const { work } = Astro.props;
+const img = workImage(work.id);
+---
+
+<article class="card featured-work-card" data-work={work.workKey}>
+  <button class="fanza-work-image" type="button" data-sample-target={work.id} aria-label="サンプルを見る">
+    <picture>
+      <source media="(max-width:560px)" srcset={img.thumb} />
+      <img src={img.large} alt={work.title.ja} />
+    </picture>
+  </button>
+  <div class="card-body">
+    <h3 data-ja={work.title.ja} data-en={work.title.en}>{work.title.ja}</h3>
+    <p class="release-date" data-ja={work.releaseDate.ja} data-en={work.releaseDate.en}>{work.releaseDate.ja}</p>
+    <p class="work-summary" data-ja={work.summary.ja} data-en={work.summary.en}>{work.summary.ja}</p>
+    <div class="link-row">
+      <a class="shop-link fanza" href={work.fanzaHref} target="_blank" rel="noopener sponsored" data-ja="FANZAで見る" data-en="View on FANZA">FANZAで見る</a>
+      <a class="shop-link dlsite" href={work.dlsiteHref} target="_blank" rel={work.dlsiteRel} data-ja="DLsiteで見る" data-en="View on DLsite">DLsiteで見る</a>
+      <button class="shop-link sample" type="button" data-sample-target={work.id} data-ja="サンプルを見る" data-en="Read Sample">サンプルを見る</button>
+    </div>
+  </div>
+</article>

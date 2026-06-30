@@ -1,0 +1,22 @@
+---
+import WorkCard from './WorkCard.astro';
+import StoresAndAccounts from './StoresAndAccounts.astro';
+import { latestWork, upcomingWork, pastWork } from '../data/works';
+---
+
+<section id="latest">
+  <div class="section-heading"><h2 data-ja="最新作" data-en="Latest Work">最新作</h2></div>
+  <div class="work-grid single-work-grid"><WorkCard work={latestWork} /></div>
+</section>
+
+<section id="announce">
+  <div class="section-heading"><h2 data-ja="新作予告" data-en="Upcoming Work">新作予告</h2></div>
+  <div class="work-grid single-work-grid"><WorkCard work={upcomingWork} /></div>
+</section>
+
+<section id="past">
+  <div class="section-heading"><h2 data-ja="これまでの作品" data-en="Previous Works">これまでの作品</h2></div>
+  <div class="work-grid single-work-grid"><WorkCard work={pastWork} /></div>
+</section>
+
+<StoresAndAccounts />

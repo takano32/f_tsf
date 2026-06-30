@@ -1,0 +1,69 @@
+---
+const shops = [
+  {
+    href: 'https://al.fanza.co.jp/?lurl=https%3A%2F%2Fwww.dmm.co.jp%2Fdc%2Fdoujin%2F-%2Flist%2F%3D%2Farticle%3Dmaker%2Fid%3D29820%2F&af_id=ftsf-005&ch=toolbar&ch_id=text',
+    rel: 'noopener sponsored',
+    logo: 'https://p.dmm.co.jp/p/favicon.ico',
+    alt: 'FANZA',
+    label: 'FANZA',
+  },
+  {
+    href: 'https://dlaf.jp/maniax/dlaf/=/aid/ftsf2/url/https%3A%2F%2Fwww.dlsite.com%2Fmaniax%2Fcircle%2Fprofile%2F%3D%2Fmaker_id%2FRG25306.html%2F%3Futm_medium%3Daffiliate%26utm_campaign%3Dbnlink%26utm_content%3Dtext',
+    rel: 'noopener sponsored',
+    logo: 'https://www.dlsite.com/images/web/common/favicon.ico',
+    alt: 'DLsite',
+    label: 'DLsite',
+  },
+  {
+    href: 'https://www.melonbooks.co.jp/circle/index.php?circle_id=103933',
+    rel: 'noopener',
+    logo: 'https://www.melonbooks.co.jp/favicon.ico',
+    alt: 'メロンブックス',
+    label: 'メロンブックス',
+    labelEn: 'Melonbooks',
+  },
+];
+
+const accounts = [
+  { href: 'https://www.pixiv.net/users/9305665', logo: 'https://www.pixiv.net/favicon.ico', name: 'pixiv' },
+  { href: 'https://x.com/F_TSF', logo: 'https://x.com/favicon.ico', name: 'X' },
+  { href: 'https://note.com/f_tsf', logo: 'https://note.com/favicon.ico', name: 'note' },
+  { href: 'https://portal.circle.ms/Circle/Index/10249112', logo: 'https://portal.circle.ms/favicon.ico', name: 'Circle.ms' },
+];
+---
+
+<section id="shops">
+  <p class="section-note" data-ja="サークル作品一覧はこちらから。" data-en="Find the circle’s works here.">サークル作品一覧はこちらから。</p>
+  <div class="work-grid">
+    {
+      shops.map((s) => (
+        <a class="card shop-card shop-card-link" href={s.href} target="_blank" rel={s.rel}>
+          <div class="card-body shop-card-body">
+            <img class="logo" src={s.logo} alt={s.alt} />
+            {s.labelEn ? (
+              <span class="label" data-ja={s.label} data-en={s.labelEn}>
+                {s.label}
+              </span>
+            ) : (
+              <span class="label">{s.label}</span>
+            )}
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<section id="accounts">
+  <p class="section-note" data-ja="更新情報・告知・記事はこちらから。" data-en="News, announcements, and activity updates.">更新情報・告知・記事はこちらから。</p>
+  <div class="social-grid">
+    {
+      accounts.map((a) => (
+        <a class="social-card" href={a.href} target="_blank" rel="noopener">
+          <img class="logo" src={a.logo} alt={a.name} />
+          <strong>{a.name}</strong>
+        </a>
+      ))
+    }
+  </div>
+</section>
